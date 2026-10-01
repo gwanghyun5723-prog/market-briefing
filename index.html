@@ -342,7 +342,130 @@ footer{margin-top:34px;padding:22px 0 44px;border-top:1px solid var(--line)}
   .issue{grid-template-columns:1fr}
   .issue .no{display:none}
 }
+
+/* ── 테마(⚙ 설정에서 고름): A 잉크·청록 / D 네이비·골드 / E 오로라 글래스 / H 노션 웜 ── */
+html[data-theme="A"]{--bg:#f4f5f7; --card:#fff; --ink:#0f1419; --sub:#5b6573; --faint:#8a94a3; --line:#e5e8ec; --soft:#f3f5f7;
+  --accent:#0d9488; --accent-ink:#fff; --accent-soft:#e5f5f3;
+  --p1:#fff; --p2:#fff; --p3:#fff; --p4:#fff; --p5:#fff;
+  --radius:16px; --shadow:none;
+  --side:#0f1419; --side-ink:#eef1f4; --side-sub:#8b95a3; --side-hover:#1a2028;
+  --hero:#0f1419; --hero-ink:#eef1f4; --hero-sub:#9aa4b2; --hero-up:#ff6b78; --hero-down:#6aa8ff; --hero-accent:#5eead4;}
+@media (prefers-color-scheme: dark){html[data-theme="A"]{--bg:#0a0c0f; --card:#12161b; --ink:#e8ebef; --sub:#9aa4b2; --faint:#6b7480; --line:#232931; --soft:#181d24;
+  --accent:#2dd4bf; --accent-ink:#04201d; --accent-soft:#0e2826;
+  --p1:#12161b; --p2:#12161b; --p3:#12161b; --p4:#12161b; --p5:#12161b;
+  --side:#06080a; --side-ink:#e8ebef; --side-sub:#6b7480; --side-hover:#141920;
+  --hero:#161c23; --hero-ink:#eef1f4; --hero-sub:#9aa4b2;}}
+html[data-theme="A"] body{letter-spacing:-.015em}
+html[data-theme="A"] .side{background:var(--side);border-right:0;color:var(--side-ink)}
+html[data-theme="A"] .brand{color:var(--side-ink)}
+html[data-theme="A"] nav.tabs button{color:var(--side-sub)}
+html[data-theme="A"] nav.tabs button:hover{background:var(--side-hover);color:var(--side-ink)}
+html[data-theme="A"] nav.tabs button[aria-selected=true]{background:var(--side-hover);color:var(--side-ink);box-shadow:inset 3px 0 0 var(--accent)}
+html[data-theme="A"] nav.tabs button[aria-selected=true] svg{color:var(--accent)}
+html[data-theme="A"] .side-meta{color:var(--side-sub)}
+html[data-theme="A"] .side-meta b{color:var(--side-ink)}
+@media (max-width:900px){html[data-theme="A"] .side{border-bottom:0}
+html[data-theme="A"] nav.tabs button[aria-selected=true]{background:var(--accent);color:var(--accent-ink);box-shadow:none}}
+html[data-theme="A"] header.top h1{font-size:28px;letter-spacing:-.035em}
+html[data-theme="A"] .hello{color:var(--faint);font-size:13px}
+html[data-theme="A"] .pill{background:transparent;border:1px solid var(--line);box-shadow:none}
+html[data-theme="A"] .meta select{border:1px solid var(--line);background:var(--card)}
+html[data-theme="A"] .rbtn{background:var(--ink);color:var(--bg)}
+html[data-theme="A"] .card,html[data-theme="A"] .tile,html[data-theme="A"] .scard,html[data-theme="A"] .tp,html[data-theme="A"] .note,html[data-theme="A"] .tnote,html[data-theme="A"] .actplan,html[data-theme="A"] .subtab,html[data-theme="A"] .aisub{border:1px solid var(--line);box-shadow:none}
+html[data-theme="A"] .subtab[aria-selected=true],html[data-theme="A"] .aisub[aria-selected=true]{border-color:var(--ink)}
+html[data-theme="A"] h2{font-size:18px;letter-spacing:-.03em}
+html[data-theme="A"] .tile-v{font-size:22px}
+html[data-theme="A"] .chip.stock{background:var(--card);border:1px solid var(--line)}
+html[data-theme="A"] .tabsum,html[data-theme="A"] .tp.accent{background:var(--hero);color:var(--hero-ink);border:0}
+html[data-theme="A"] .tabsum-h,html[data-theme="A"] .tp.accent .tph{color:var(--hero-accent)}
+html[data-theme="A"] .tabsum li::marker,html[data-theme="A"] .tp.accent .ttop li::marker{color:var(--hero-accent)}
+html[data-theme="A"] .tabsum b.hl,html[data-theme="A"] .tp.accent b.hl{color:var(--hero-accent)}
+html[data-theme="A"] .tabsum b.up,html[data-theme="A"] .tp.accent b.up{color:var(--hero-up)}
+html[data-theme="A"] .tabsum b.down,html[data-theme="A"] .tp.accent b.down{color:var(--hero-down)}
+html[data-theme="A"] .tp.accent .tsub,html[data-theme="A"] .tp.accent .tsrc{color:var(--hero-sub)!important}
+html[data-theme="A"] .actplan{border-left:3px solid var(--accent)}
+html[data-theme="A"] .focus>div:nth-child(2){background:var(--accent-soft)}
+html[data-theme="D"]{--bg:#f7f5f0;--card:#fff;--ink:#14213d;--sub:#5c6478;--faint:#8e94a3;--line:#e8e3d8;--soft:#f3efe6;
+  --accent:#b8892d;--accent-ink:#fff;--accent-soft:#f6eedc;--p1:#fff;--p2:#fff;--p3:#fff;--p4:#fff;--p5:#fff;
+  --radius:14px;--shadow:0 1px 2px rgba(20,33,61,.06)}
+html[data-theme="D"] .side{background:#14213d;border-right:0}
+html[data-theme="D"] .brand{color:#fff}
+html[data-theme="D"] .brand .logo{background:#b8892d}
+html[data-theme="D"] nav.tabs button{color:#aab3c5}
+html[data-theme="D"] nav.tabs button:hover{background:#1f3157;color:#fff}
+html[data-theme="D"] nav.tabs button[aria-selected=true]{background:#1f3157;color:#fff;box-shadow:inset 3px 0 0 #e0b85c}
+html[data-theme="D"] .side-meta{color:#8e99b0}
+html[data-theme="D"] .side-meta b{color:#e0b85c}
+html[data-theme="D"] header.top h1{font-family:"Nanum Myeongjo","Noto Serif KR",serif;font-weight:800}
+html[data-theme="D"] .card,html[data-theme="D"] .tile,html[data-theme="D"] .scard,html[data-theme="D"] .tp,html[data-theme="D"] .actplan{border:1px solid var(--line)}
+html[data-theme="D"] .tabsum{background:#14213d;color:#f3efe6}
+html[data-theme="D"] .tabsum-h{color:#e0b85c}
+html[data-theme="D"] .tabsum li::marker{color:#e0b85c}
+html[data-theme="D"] .tabsum b.hl{color:#f0c96a}
+html[data-theme="D"] .tabsum b.up{color:#ff8a94}
+html[data-theme="D"] .tabsum b.down{color:#8cbcff}
+html[data-theme="D"] .actplan{border-left:3px solid #b8892d}
+html[data-theme="D"] .rbtn{background:#14213d;color:#fff}
+html[data-theme="D"] .pill{background:#fff;border:1px solid var(--line)}
+html[data-theme="D"] .tp.accent{background:#14213d;color:#f3efe6;border:0}
+html[data-theme="D"] .tp.accent .tph,html[data-theme="D"] .tp.accent .ttop li::marker{color:#e0b85c}
+html[data-theme="D"] .tp.accent b.hl{color:#f0c96a}
+html[data-theme="D"] .tp.accent b.up{color:#ff8a94}
+html[data-theme="D"] .tp.accent b.down{color:#8cbcff}
+html[data-theme="E"]{--bg:#f6f5fb;--card:rgba(255,255,255,.7);--ink:#1b1736;--sub:#5d5a78;--faint:#8c89a6;--line:rgba(120,110,180,.18);--soft:rgba(255,255,255,.55);
+  --accent:#7c3aed;--accent-ink:#fff;--accent-soft:rgba(124,58,237,.1);--p1:rgba(255,255,255,.7);--p2:rgba(255,255,255,.7);--p3:rgba(255,255,255,.7);--p4:rgba(255,255,255,.7);--p5:rgba(255,255,255,.7);
+  --radius:20px;--shadow:0 8px 30px rgba(60,40,140,.08)}
+html[data-theme="E"] body{background:radial-gradient(1000px 600px at 5% -10%,#e7d9ff 0,transparent 60%),radial-gradient(900px 500px at 100% 0,#d3ecff 0,transparent 55%),radial-gradient(700px 500px at 60% 110%,#ffe3f1 0,transparent 60%),#f6f5fb;background-attachment:fixed}
+html[data-theme="E"] .side{background:rgba(255,255,255,.5);backdrop-filter:blur(18px);border-right:1px solid rgba(255,255,255,.7)}
+html[data-theme="E"] .card,html[data-theme="E"] .tile,html[data-theme="E"] .scard,html[data-theme="E"] .tp,html[data-theme="E"] .actplan,html[data-theme="E"] .note,html[data-theme="E"] .pill{backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.8)}
+html[data-theme="E"] nav.tabs button[aria-selected=true]{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff}
+html[data-theme="E"] .brand .logo{background:linear-gradient(135deg,#7c3aed,#2563eb)}
+html[data-theme="E"] .tabsum{background:linear-gradient(135deg,#6d28d9 0%,#4f46e5 50%,#2563eb 100%);color:#fff;box-shadow:0 12px 40px rgba(79,70,229,.3)}
+html[data-theme="E"] .tabsum-h{color:#e9e3ff}
+html[data-theme="E"] .tabsum li::marker{color:#e9e3ff}
+html[data-theme="E"] .tabsum b.hl{color:#fde68a}
+html[data-theme="E"] .tabsum b.up{color:#ffc2c8}
+html[data-theme="E"] .tabsum b.down{color:#c7e3ff}
+html[data-theme="E"] .actplan{border-left:3px solid #7c3aed}
+html[data-theme="E"] .rbtn{background:linear-gradient(135deg,#7c3aed,#2563eb)}
+html[data-theme="E"] .tabsum b.up,html[data-theme="E"] .tp.accent b.up{color:#fff;background:rgba(240,68,82,.75);padding:0 4px;border-radius:4px}
+html[data-theme="E"] .tabsum b.down,html[data-theme="E"] .tp.accent b.down{color:#fff;background:rgba(49,130,246,.85);padding:0 4px;border-radius:4px}
+html[data-theme="E"] .tp.accent{background:linear-gradient(135deg,#6d28d9 0%,#4f46e5 50%,#2563eb 100%);color:#fff;border:0}
+html[data-theme="E"] .tp.accent .tph,html[data-theme="E"] .tp.accent .ttop li::marker{color:#e9e3ff}
+html[data-theme="E"] .tp.accent b.hl{color:#fde68a}
+html[data-theme="H"]{--bg:#fbfaf8;--card:#fff;--ink:#37352f;--sub:#6f6e69;--faint:#9b9a97;--line:#ebe9e4;--soft:#f4f2ee;
+  --accent:#0f7b6c;--accent-ink:#fff;--accent-soft:#e6f2ef;
+  --p1:#fbf3db;--p2:#e6f2ef;--p3:#f1ece4;--p4:#ede7f5;--p5:#f6efe6;--radius:10px;--shadow:0 1px 2px rgba(55,53,47,.06)}
+html[data-theme="H"] body{font-family:ui-sans-serif,-apple-system,"Pretendard Variable",Pretendard,"Apple SD Gothic Neo",sans-serif}
+html[data-theme="H"] .side{background:#f7f6f3;border-right:1px solid var(--line)}
+html[data-theme="H"] nav.tabs button{border-radius:6px}
+html[data-theme="H"] nav.tabs button[aria-selected=true]{background:#ebe9e4;color:var(--ink)}
+html[data-theme="H"] nav.tabs button[aria-selected=true] svg{color:var(--accent)}
+html[data-theme="H"] .card,html[data-theme="H"] .tile,html[data-theme="H"] .scard,html[data-theme="H"] .tp,html[data-theme="H"] .actplan{border:1px solid var(--line)}
+html[data-theme="H"] .tabsum{background:#fbf3db;border-radius:8px}
+html[data-theme="H"] .tabsum-h{color:#8a5a00}
+html[data-theme="H"] .tabsum li::marker{color:#8a5a00}
+html[data-theme="H"] b.hl{color:var(--accent)}
+html[data-theme="H"] .actplan{border-left:0;background:#f4f2ee}
+html[data-theme="H"] .focus>div{background:#fff}
+html[data-theme="H"] .focus>div:nth-child(2){background:#e6f2ef}
+html[data-theme="H"] .rbtn{background:var(--ink);border-radius:8px}
+html[data-theme="H"] .pill{background:#fff;border:1px solid var(--line)}
+html[data-theme="H"] .tp.accent{background:#fbf3db;border:0}
+html[data-theme="H"] .tp.accent .tph,html[data-theme="H"] .tp.accent .ttop li::marker{color:#8a5a00}
+
+/* 테마 고르기(⚙) */
+.gbtn{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;padding:0}
+.gbtn svg{width:17px;height:17px}
+.themepop{position:fixed;z-index:30;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 12px 40px rgba(0,0,0,.18);width:min(320px,calc(100vw - 32px))}
+.themepop h4{margin:0 0 10px;font-size:13px;color:var(--sub)}
+.themepop .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.themepop button{display:flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:left;font:inherit;font-size:13px;font-weight:700;color:var(--ink);background:var(--soft);border:2px solid transparent;border-radius:12px;padding:10px;cursor:pointer}
+.themepop button[aria-pressed=true]{border-color:var(--accent)}
+.themepop .sw{display:flex;gap:3px} .themepop .sw i{width:18px;height:18px;border-radius:5px;display:block;border:1px solid rgba(0,0,0,.08)}
+.themepop small{font-weight:500;color:var(--sub);font-size:11.5px}
 </style>
+<script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"A"}catch(e){document.documentElement.dataset.theme="A"}</script>
 </head>
 <body>
 <div class="app">
@@ -376,7 +499,12 @@ const TAB_ICONS = {
 };
 const SPARK = svg('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>');
 const CH_COLORS = ["#6b5cff", "#f04452", "#12b886", "#f59f00", "#3182f6", "#e64980"];
-const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+const THEMES = [["A", "잉크·청록", "어두운 사이드바·청록 포인트", ["#0f1419", "#0d9488", "#f4f5f7"]],
+  ["D", "네이비·골드", "프라이빗뱅킹 리포트", ["#14213d", "#b8892d", "#f7f5f0"]],
+  ["E", "오로라 글래스", "그라데이션·반투명 카드", ["#7c3aed", "#2563eb", "#ffe3f1"]],
+  ["H", "노션 웜", "따뜻한 메모장 느낌", ["#fbf3db", "#0f7b6c", "#fbfaf8"]]];
+/* 위젯 색: A는 기기 다크 모드를 따르고, 나머지 테마는 밝은 화면 */
+const isDark = () => document.documentElement.dataset.theme === "A" && matchMedia("(prefers-color-scheme: dark)").matches;
 let D = null, current = "t1";
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -540,10 +668,10 @@ function mountCharts(root) {
     if (el.classList.contains("tvov")) {  // 팝업: 기간 버튼(1개월~3년)이 있는 위젯
       sc.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
       sc.textContent = JSON.stringify({symbols: [[el.dataset.symbol + "|3M"]], dateRanges: ["1m|30", "3m|60", "12m|1D", "36m|1W"],
-        chartOnly: false, showVolume: false, width: "100%", height: "100%", locale: "kr", colorTheme: dark ? "dark" : "light", isTransparent: true, autosize: true});
+        chartOnly: false, showVolume: false, width: "100%", height: "100%", locale: "kr", colorTheme: isDark() ? "dark" : "light", isTransparent: true, autosize: true});
     } else {
       sc.src = "https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js";
-      sc.textContent = JSON.stringify({symbol: el.dataset.symbol, width: "100%", height: "100%", locale: "kr", dateRange: "3M", colorTheme: dark ? "dark" : "light", isTransparent: true, autosize: true, chartOnly: el.classList.contains("mini"), noTimeScale: el.classList.contains("mini")});
+      sc.textContent = JSON.stringify({symbol: el.dataset.symbol, width: "100%", height: "100%", locale: "kr", dateRange: "3M", colorTheme: isDark() ? "dark" : "light", isTransparent: true, autosize: true, chartOnly: el.classList.contains("mini"), noTimeScale: el.classList.contains("mini")});
     }
     el.firstChild.appendChild(sc);
   });
@@ -949,7 +1077,9 @@ function render() {
     <span class="pill"><span class="dot"></span>생성 ${esc(fmtTime(D.generated_at))}</span>
     ${P ? `<span class="pill">시세 ${esc(fmtTime(P.updated_at))}</span>` : ""}
     ${DAYS.length > 1 ? `<select id="daysel" aria-label="날짜 선택">${DAYS.map(d => `<option ${d.date === D.date ? "selected" : ""}>${d.date}</option>`).join("")}</select>` : ""}
-    <button type="button" class="rbtn" id="refresh" title="최신 브리핑·시세 다시 불러오기">${REFRESH}새로고침</button>`;
+    <button type="button" class="rbtn" id="refresh" title="최신 브리핑·시세 다시 불러오기">${REFRESH}새로고침</button>
+    <button type="button" class="gbtn" id="themebtn" title="테마 바꾸기" aria-label="테마 바꾸기">${GEAR}</button>`;
+  document.getElementById("themebtn").onclick = e => { e.stopPropagation(); toggleThemePop(e.currentTarget); };
   document.getElementById("refresh").onclick = e => refreshData(e.currentTarget);
   document.getElementById("sidemeta").innerHTML = `<b>데이터 기준</b><br>${esc(D.data_basis)}`;
   const sel = document.getElementById("daysel");
@@ -996,6 +1126,28 @@ async function refreshData(btn) {
   }
 }
 
+/* 테마 고르기: 브라우저에 기억(localStorage), 바꾸면 위젯 색까지 다시 그린다 */
+const GEAR = svg('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>');
+function toggleThemePop(btn) {
+  const old = document.querySelector(".themepop");
+  if (old) { old.remove(); return; }
+  const cur = document.documentElement.dataset.theme;
+  const pop = document.createElement("div");
+  pop.className = "themepop"; pop.setAttribute("role", "dialog"); pop.setAttribute("aria-label", "테마 선택");
+  pop.innerHTML = `<h4>테마</h4><div class="opts">${THEMES.map(([k, nm, desc, sw]) =>
+    `<button type="button" data-theme-pick="${k}" aria-pressed="${k === cur}"><span class="sw">${sw.map(c => `<i style="background:${c}"></i>`).join("")}</span>${esc(nm)}<small>${esc(desc)}</small></button>`).join("")}</div>`;
+  document.body.appendChild(pop);
+  const r = btn.getBoundingClientRect();
+  pop.style.top = `${r.bottom + 8}px`;
+  pop.style.left = `${Math.max(16, Math.min(r.right - pop.offsetWidth, innerWidth - pop.offsetWidth - 16))}px`;
+}
+function setTheme(k) {
+  document.documentElement.dataset.theme = k;
+  try { localStorage.setItem("mb-theme", k); } catch (e) {}
+  document.querySelector(".themepop")?.remove();
+  render();
+}
+
 /* 유튜브 탭의 채널별 하위 탭 */
 let currentCh = 0;
 function showChannel(i) {
@@ -1016,6 +1168,9 @@ document.getElementById("tabbar").innerHTML = TABS.map(([id, nm]) => `<button ro
 document.getElementById("tabbar").onclick = e => { const b = e.target.closest("button"); if (b) show(b.dataset.id); };
 const dlg = document.getElementById("stockdlg");
 document.addEventListener("click", e => {
+  const tp = e.target.closest("[data-theme-pick]");
+  if (tp) { setTheme(tp.dataset.themePick); return; }
+  if (!e.target.closest(".themepop")) document.querySelector(".themepop")?.remove();
   const b = e.target.closest(".sbtn");
   if (b) {
     dlg.innerHTML = stockCard(b.dataset.t, mentionMap(), true);
