@@ -760,6 +760,22 @@ html[data-theme="LG"] .themepop.sheet{background:rgba(250,251,255,.92)}html[data
   .themepop.sheet{max-height:88vh}
 }
 @media (max-width:900px){ html[data-theme="A"] nav.tabs button[aria-selected=true] svg{color:currentColor} }
+
+/* Next 섹터 탐색: 섹터 선택 탭 */
+.nx-pick{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 10px;margin:22px 0 0;position:sticky;top:0;z-index:4}
+.nx-pick::-webkit-scrollbar{display:none}
+.nx-pick{background:var(--bg);margin-left:-6px;margin-right:-6px;padding-left:8px;padding-right:8px}
+.nx-grp[hidden],.nx-ind[hidden]{display:none!important}
+.nx-tab{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;color:var(--sub);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 10px 6px 7px;cursor:pointer;white-space:nowrap;box-shadow:var(--shadow)}
+.nx-tab[data-nx="all"]{padding-left:12px}
+.nx-tab .cnt{font-weight:600;opacity:.6}
+.nx-tab[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.nx-st{font-size:10.5px;font-weight:800;padding:2px 6px;border-radius:999px}
+.nx-st.g-green{background:rgba(18,184,134,.16);color:#0b8a63}
+.nx-st.g-yellow{background:rgba(245,159,0,.18);color:#a86400}
+.nx-st.g-blue{background:rgba(49,130,246,.15);color:#245fbf}
+.nx-tab[aria-selected=true] .nx-st{background:rgba(255,255,255,.9)}
+@media (max-width:900px){.nx-pick{top:58px}}
 </style>
 <script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"NR"}catch(e){document.documentElement.dataset.theme="NR"}</script>
 </head>
@@ -1207,6 +1223,18 @@ function nxIcon(ind, size = 22) {
   const k = ind.icon || NX_ICON_KEYS[ind.key] || (NX_ICON_WORDS.find(([w]) => new RegExp(w).test(ind.name)) || [])[1] || "curve";
   return `<span class="nx-ic g-${esc(ind.group || "blue")}" style="--s:${size}px">${svg(NX_ICONS[k] || NX_ICONS.curve)}</span>`;
 }
+const NX_SHORT = {cpo: "CPO·포토닉스", glass: "유리기판", hybrid_bonding: "하이브리드 본딩", liquid_cooling: "액체냉각", hvdc: "800V HVDC", smr: "SMR",
+  dc_ess: "데이터센터 ESS", ssb: "전고체", robotaxi: "로보택시", leo_space: "저궤도 위성", humanoid: "휴머노이드", oral_glp1: "경구 GLP-1",
+  adc_bispecific: "ADC·이중항체", ai_agent: "AI 에이전트", quantum: "양자컴퓨팅"};
+const NX_STAGE_SHORT = {"도입기": "도입기", "변곡점 직전": "직전", "변곡점 초입": "초입", "고성장기": "고성장", "성숙기": "성숙"};
+const nxShort = ind => ind.short || NX_SHORT[ind.key] || ind.name.split("(")[0].slice(0, 12);
+let currentNx = "all";
+function nxPick(k) {
+  currentNx = k;
+  document.querySelectorAll(".nx-tab").forEach(b => b.setAttribute("aria-selected", b.dataset.nx === k));
+  document.querySelectorAll(".nx-ind").forEach(c => c.hidden = k !== "all" && c.dataset.ind !== k);
+  document.querySelectorAll(".nx-grp").forEach(gh => gh.hidden = k !== "all" && ![...document.querySelectorAll(`.nx-ind[data-g="${gh.dataset.g}"]`)].some(c => !c.hidden));
+}
 function nxRank() {
   const N = window.MARKET_NEXT;
   if (!N) return {all: [], ranked: [], top5: []};
@@ -1250,11 +1278,17 @@ function renderT6() {
         : `${esc(c.price || "현재가 확인 필요")}${c.price_as_of ? ` (${esc(c.price_as_of)})` : ""}`}${c.perf_1y ? ` · 1년 ${esc(c.perf_1y)}` : ""}</div>
       <dl>${[["매출 연관", c.revenue_link], ["성장", c.growth], ["수익성", c.profitability], ["밸류", c.valuation], ["선반영", c.priced_in]]
         .filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${rich(v)}</dd>`).join("")}</dl>${nxSrc(c.sources)}</div>`; };
+  // 섹터 선택 탭: 전체 + 산업별(아이콘·짧은 이름·변곡점 구간). 누르면 그 산업 카드만 보인다
+  const ordered = NX_GROUPS.flatMap(([g]) => N.industries.filter(i => i.group === g));
+  h += `<div class="nx-pick" role="tablist" aria-label="섹터 선택">
+    <button type="button" class="nx-tab" data-nx="all" aria-selected="${currentNx === "all"}" onclick="nxPick('all')">전체 <span class="cnt">${N.industries.length}</span></button>
+    ${ordered.map(ind => `<button type="button" class="nx-tab" data-nx="${esc(ind.key)}" aria-selected="${currentNx === ind.key}" onclick="nxPick('${esc(ind.key)}')">${nxIcon(ind, 20)}${esc(nxShort(ind))}${ind.overheated ? " ⚠️" : ""}<span class="nx-st g-${esc(ind.group)}">${esc(NX_STAGE_SHORT[ind.stage] || ind.stage)}</span></button>`).join("")}
+  </div>`;
   for (const [g, title] of NX_GROUPS) {
     const inds = N.industries.filter(i => i.group === g);
     if (!inds.length) continue;
-    h += `<div class="nx-grp">${title} <span class="small muted">${inds.length}개 산업</span></div>`;
-    h += inds.map(ind => `<div class="card">
+    h += `<div class="nx-grp" data-g="${g}">${title} <span class="small muted">${inds.length}개 산업</span></div>`;
+    h += inds.map(ind => `<div class="card nx-ind" data-ind="${esc(ind.key)}" data-g="${g}">
       <div class="sector-head"><h3 class="nx-h">${nxIcon(ind, 36)}${esc(ind.name)}${ind.overheated ? " ⚠️" : ""}</h3><span class="chip">${esc(ind.stage)}</span></div>
       <div class="nx-stage">${NX_STAGES.map(st => `<span class="${st === ind.stage ? "on" : ""}">${st}</span>`).join("")}</div>
       <div class="nx-kv"><div><b>침투율·상용화</b>${rich(ind.penetration || "확인 필요")}</div><div><b>증가 속도</b>${rich(ind.growth || "확인 필요")}</div><div><b>TAM</b>${rich(ind.tam || "확인 필요")}</div></div>
