@@ -739,8 +739,29 @@ html[data-theme="NR"] .tile:has(.tile-c.up) .tile-n::before{background:#ff6b6b}h
 .themepop.sheet .opts{grid-template-columns:1fr 1fr}
 html[data-theme="LG"] .themepop.sheet{background:rgba(250,251,255,.92)}html[data-theme="LG"] .themepop.sheet h4{background:rgba(250,251,255,.97)}
 @media (prefers-color-scheme: dark){ html[data-theme="LG"] .themepop.sheet{background:rgba(28,30,38,.94)}html[data-theme="LG"] .themepop.sheet h4{background:rgba(28,30,38,.98)} }
+
+/* ── 휴대폰: 모든 테마에서 탭을 화면 아래 탭 바로 (아이콘 + 글자) ── */
+@media (max-width:900px){
+  .side{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}  /* 조상에 backdrop-filter가 있으면 fixed 탭 바가 화면이 아니라 사이드바 기준으로 붙는다 */
+  .brand span.txt{display:inline}
+  nav.tabs{position:fixed;z-index:20;left:0;right:0;bottom:0;display:flex;flex-direction:row;justify-content:space-around;gap:0;overflow:visible;
+    padding:6px 6px calc(6px + env(safe-area-inset-bottom));background:inherit;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.06)}
+  nav.tabs button{flex:1 1 0;min-width:0;flex-direction:column;gap:3px;padding:6px 2px;font-size:10.5px;font-weight:600;text-align:center;justify-content:center;white-space:nowrap;border-radius:12px}
+  nav.tabs button svg{display:block;width:21px;height:21px;margin:0 auto}
+  .content{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+}
+/* ── 휴대폰 테마 고르기: 3열 작은 칸으로 한 화면에 ── */
+@media (max-width:640px){
+  .themepop.sheet .opts{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .themepop.sheet button{padding:8px 7px;gap:5px;font-size:12px;line-height:1.25;border-radius:10px}
+  .themepop.sheet button small{display:none}
+  .themepop.sheet .sw i{width:13px;height:13px;border-radius:4px}
+  .themepop.sheet{max-height:88vh}
+}
+@media (max-width:900px){ html[data-theme="A"] nav.tabs button[aria-selected=true] svg{color:currentColor} }
 </style>
-<script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"A"}catch(e){document.documentElement.dataset.theme="A"}</script>
+<script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"NR"}catch(e){document.documentElement.dataset.theme="NR"}</script>
 </head>
 <body>
 <div class="app">
@@ -775,7 +796,8 @@ const TAB_ICONS = {
 };
 const SPARK = svg('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>');
 const CH_COLORS = ["#6b5cff", "#f04452", "#12b886", "#f59f00", "#3182f6", "#e64980"];
-const THEMES = [["A", "잉크·청록", "어두운 사이드바·청록 포인트", ["#0f1419", "#0d9488", "#f4f5f7"]],
+const THEMES = [["NR", "뉴모피즘 레인보우", "기본 · 소프트 화이트·무지개 링·컬러 점", ["#ececee", "#ff6b5b", "#69db7c"]],
+  ["A", "잉크·청록", "어두운 사이드바·청록 포인트", ["#0f1419", "#0d9488", "#f4f5f7"]],
   ["D", "네이비·골드", "프라이빗뱅킹 리포트", ["#14213d", "#b8892d", "#f7f5f0"]],
   ["E", "오로라 글래스", "그라데이션·반투명 카드", ["#7c3aed", "#2563eb", "#ffe3f1"]],
   ["LN", "리니어 다크", "검정 바탕·은은한 보랏빛", ["#08090a", "#7c84e8", "#1c1d22"]],
@@ -786,12 +808,11 @@ const THEMES = [["A", "잉크·청록", "어두운 사이드바·청록 포인�
   ["CL", "클레이 3D", "말랑한 점토 입체감·파스텔", ["#e9e5ff", "#7c5cf0", "#ffb3c6"]],
   ["AN", "아날로그 노트", "종이 질감·손글씨·형광펜", ["#f6f1e4", "#ffe680", "#c2371f"]],
   ["RI", "리소 프린트", "형광 핑크·파랑 인쇄 느낌", ["#ff48b0", "#0078bf", "#ffd600"]],
-  ["LG", "리퀴드 글래스", "iOS 26 느낌 · 맑은 유리·떠 있는 탭 바", ["#7cc4ff", "#ffffff", "#ff9ad5"]],
-  ["NR", "뉴모피즘 레인보우", "소프트 화이트·무지개 링·컬러 점", ["#ececee", "#ff6b5b", "#69db7c"]]];
+  ["LG", "리퀴드 글래스", "iOS 26 느낌 · 맑은 유리·떠 있는 탭 바", ["#7cc4ff", "#ffffff", "#ff9ad5"]]];
 /* 위젯 색: 다크 테마(리니어·글래스 벤토)는 어둡게, A는 기기 다크 모드를 따르고, 나머지는 밝은 화면 */
 const DARK_THEMES = ["LN", "GB"];
-/* 메뉴에서 뺀 테마(예: 애시드 라임·딥 그린)를 쓰던 브라우저는 기본 테마로 */
-if (!THEMES.some(t => t[0] === document.documentElement.dataset.theme)) document.documentElement.dataset.theme = "A";
+/* 메뉴에서 뺀 테마를 쓰던 브라우저는 기본 테마(뉴모피즘 레인보우)로 */
+if (!THEMES.some(t => t[0] === document.documentElement.dataset.theme)) document.documentElement.dataset.theme = "NR";
 const isDark = () => DARK_THEMES.includes(document.documentElement.dataset.theme) || (["A", "LG"].includes(document.documentElement.dataset.theme) && matchMedia("(prefers-color-scheme: dark)").matches);
 let D = null, current = "t1";
 
