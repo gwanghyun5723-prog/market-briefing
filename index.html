@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>증시 아침 브리핑</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* 디자인: 토스증권(여백·글꼴·빨강/파랑·지표 타일) + Fox Stocks(왼쪽 사이드바·라벤더 강조·파스텔 카드) */
@@ -624,6 +625,66 @@ html[data-theme="DG"] .rbtn{background:var(--accent);color:var(--accent-ink)}
 html[data-theme="DG"] header.top h1,html[data-theme="DG"] .tile-v{letter-spacing:-.035em}
 html[data-theme="DG"]{color-scheme:dark}
 .themepop{max-height:calc(100vh - 90px);overflow:auto}
+/* ── 2026 트렌드 테마 6종: 글래스 벤토·클레이 3D·도파민 팝·리퀴드 메탈·아날로그 노트·리소 프린트 ── */
+html[data-theme="GB"]{--bg:#1b1340;--card:rgba(255,255,255,.10);--ink:#ffffff;--sub:rgba(255,255,255,.74);--faint:rgba(255,255,255,.55);--line:rgba(255,255,255,.2);--soft:rgba(255,255,255,.08);--up:#ffb3c4;--up-bg:rgba(255,90,130,.2);--down:#a9d0ff;--down-bg:rgba(90,150,255,.2);--flat:rgba(255,255,255,.7);--flat-bg:rgba(255,255,255,.1);--accent:#ffd36e;--accent-ink:#1b1340;--accent-soft:rgba(255,211,110,.16);--warn:#ffd36e;--warn-bg:rgba(255,211,110,.14);--p1:rgba(255,255,255,.1);--p2:rgba(255,255,255,.1);--p3:rgba(255,255,255,.1);--p4:rgba(255,255,255,.1);--p5:rgba(255,255,255,.1);--radius:20px;--shadow:0 10px 30px rgba(10,0,40,.25);color-scheme:dark}
+html[data-theme="GB"] body{background:radial-gradient(900px 600px at 0% 0%,#ff5fa2 0,transparent 60%),radial-gradient(1000px 650px at 100% 15%,#4f46e5 0,transparent 60%),radial-gradient(900px 600px at 40% 110%,#ff9f43 0,transparent 60%),#1b1340;background-attachment:fixed}
+html[data-theme="GB"] .side{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-right:1px solid rgba(255,255,255,.18)}
+html[data-theme="GB"] .card,html[data-theme="GB"] .tile,html[data-theme="GB"] .scard,html[data-theme="GB"] .tp,html[data-theme="GB"] .note,html[data-theme="GB"] .tnote,html[data-theme="GB"] .actplan,html[data-theme="GB"] .nx-co,html[data-theme="GB"] .pill,html[data-theme="GB"] .subtab,html[data-theme="GB"] .aisub,html[data-theme="GB"] .tabsum,html[data-theme="GB"] .tp.accent{background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.06));backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 30px rgba(10,0,40,.22);color:#fff}
+html[data-theme="GB"] nav.tabs button[aria-selected=true]{background:rgba(255,255,255,.2);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+html[data-theme="GB"] .tabsum-h,html[data-theme="GB"] .tabsum li::marker,html[data-theme="GB"] .tp.accent .tph{color:#ffd36e}
+html[data-theme="GB"] .rbtn{background:rgba(255,255,255,.22);color:#fff;border:1px solid rgba(255,255,255,.35)}
+html[data-theme="GB"] .themepop{background:#2a1f5c}
+html[data-theme="CL"]{--bg:#e9e5ff;--card:#f1eeff;--ink:#2d2a4a;--sub:#625d86;--faint:#8e89b0;--line:rgba(120,110,200,.14);--soft:#e4dfff;--accent:#7c5cf0;--accent-ink:#fff;--accent-soft:#e2dbff;--p1:#f1eeff;--p2:#f1eeff;--p3:#f1eeff;--p4:#f1eeff;--p5:#f1eeff;--radius:26px;--shadow:8px 8px 18px #cbc5f0,-8px -8px 18px #ffffff}
+html[data-theme="CL"] body{background:#e9e5ff}
+html[data-theme="CL"] .side{background:#e9e5ff;border-right:0}
+html[data-theme="CL"] .card,html[data-theme="CL"] .tile,html[data-theme="CL"] .scard,html[data-theme="CL"] .tp,html[data-theme="CL"] .note,html[data-theme="CL"] .tnote,html[data-theme="CL"] .actplan,html[data-theme="CL"] .nx-co,html[data-theme="CL"] .pill,html[data-theme="CL"] .subtab,html[data-theme="CL"] .aisub{border:0;box-shadow:8px 8px 18px #cbc5f0,-8px -8px 18px #ffffff,inset 2px 2px 4px rgba(255,255,255,.9),inset -3px -3px 6px rgba(160,150,220,.22)}
+html[data-theme="CL"] nav.tabs button[aria-selected=true]{background:#f1eeff;color:#7c5cf0;box-shadow:5px 5px 12px #cbc5f0,-5px -5px 12px #fff}
+html[data-theme="CL"] .tabsum,html[data-theme="CL"] .tp.accent,html[data-theme="CL"] .bento .b-big{background:linear-gradient(145deg,#a78bfa,#7c5cf0);color:#fff;border:0;box-shadow:10px 12px 24px rgba(124,92,240,.4),inset 3px 3px 8px rgba(255,255,255,.4),inset -6px -8px 14px rgba(60,20,160,.3)}
+html[data-theme="CL"] .bento .b-big .tile-n,html[data-theme="CL"] .bento .b-big .src,html[data-theme="CL"] .bento .b-big a{color:rgba(255,255,255,.85)}
+html[data-theme="CL"] .tabsum-h,html[data-theme="CL"] .tabsum li::marker,html[data-theme="CL"] .tp.accent .tph,html[data-theme="CL"] .tabsum b.hl{color:#fff3b0}
+html[data-theme="CL"] .tabsum b.up,html[data-theme="CL"] .bento .b-big .up{color:#ffe0e6}html[data-theme="CL"] .tabsum b.down{color:#d6e6ff}
+html[data-theme="CL"] .rbtn{background:#7c5cf0;color:#fff;box-shadow:4px 4px 10px rgba(124,92,240,.4)}
+html[data-theme="DP"]{--bg:#ffe94a;--card:#ffffff;--ink:#111111;--sub:#3a3a3a;--faint:#5a5a5a;--line:#111111;--soft:#fff7c2;--up:#e8003d;--up-bg:#ffd6e2;--down:#1f5bff;--down-bg:#d9e4ff;--flat:#333;--flat-bg:#f2f2f2;--accent:#ff3d8b;--accent-ink:#111;--accent-soft:#ffd1e4;--p1:#fff;--p2:#fff;--p3:#fff;--p4:#fff;--p5:#fff;--radius:14px;--shadow:5px 5px 0 #111}
+html[data-theme="DP"] body{background:#ffe94a}
+html[data-theme="DP"] .side{background:#ffe94a;border-right:3px solid #111}
+html[data-theme="DP"] .card,html[data-theme="DP"] .tile,html[data-theme="DP"] .scard,html[data-theme="DP"] .tp,html[data-theme="DP"] .note,html[data-theme="DP"] .tnote,html[data-theme="DP"] .actplan,html[data-theme="DP"] .nx-co,html[data-theme="DP"] .pill,html[data-theme="DP"] .subtab,html[data-theme="DP"] .aisub{border:3px solid #111;box-shadow:5px 5px 0 #111}
+html[data-theme="DP"] header.top h1,html[data-theme="DP"] h2,html[data-theme="DP"] .brand,html[data-theme="DP"] .tile-v,html[data-theme="DP"] .tabsum-h,html[data-theme="DP"] .nx-grp{font-family:"Black Han Sans","Pretendard Variable",sans-serif;font-weight:400;letter-spacing:-.01em}
+html[data-theme="DP"] header.top h1{font-size:34px}html[data-theme="DP"] .bento .b-big .tile-v{font-size:58px}
+html[data-theme="DP"] nav.tabs button[aria-selected=true]{background:#111;color:#ffe94a}
+html[data-theme="DP"] .tabsum,html[data-theme="DP"] .tp.accent{background:#ff3d8b;color:#111;border:3px solid #111;box-shadow:5px 5px 0 #111}
+html[data-theme="DP"] .bento .b-big{background:#3d7bff;color:#fff}html[data-theme="DP"] .bento .b-big .tile-n,html[data-theme="DP"] .bento .b-big .src,html[data-theme="DP"] .bento .b-big a,html[data-theme="DP"] .bento .b-big .tile-c{color:#fff}
+html[data-theme="DP"] .tabsum-h,html[data-theme="DP"] .tabsum li::marker,html[data-theme="DP"] .tp.accent .tph{color:#111}html[data-theme="DP"] .tabsum b.hl{background:#ffe94a;padding:0 3px}html[data-theme="DP"] .tabsum b.up{color:#fff;background:#111;padding:0 4px;border-radius:4px}html[data-theme="DP"] .tabsum b.down{color:#111;background:#fff;padding:0 4px;border-radius:4px}
+html[data-theme="DP"] .rbtn{background:#111;color:#ffe94a;border:0}html[data-theme="DP"] .chip.stock{border:2px solid #111}
+html[data-theme="LM"]{--bg:#0e0f12;--card:#1a1c21;--ink:#e9ecf1;--sub:#9aa1ad;--faint:#6d7380;--line:#2f333b;--soft:#22252b;--up:#ff7a85;--up-bg:rgba(255,122,133,.12);--down:#7fb4ff;--down-bg:rgba(127,180,255,.12);--flat:#9aa1ad;--flat-bg:#22252b;--accent:#c9ced8;--accent-ink:#0e0f12;--accent-soft:rgba(201,206,216,.12);--warn:#fbbf24;--warn-bg:rgba(251,191,36,.12);--p1:#1a1c21;--p2:#1a1c21;--p3:#1a1c21;--p4:#1a1c21;--p5:#1a1c21;--radius:16px;--shadow:0 8px 20px rgba(0,0,0,.5);color-scheme:dark}
+html[data-theme="LM"] body{background:radial-gradient(900px 500px at 85% -15%,#3a3f4a 0,transparent 70%),#0e0f12;background-attachment:fixed}
+html[data-theme="LM"] .side{background:linear-gradient(180deg,#1c1e23,#111215);border-right:1px solid #2f333b}
+html[data-theme="LM"] .card,html[data-theme="LM"] .tile,html[data-theme="LM"] .scard,html[data-theme="LM"] .tp,html[data-theme="LM"] .note,html[data-theme="LM"] .tnote,html[data-theme="LM"] .actplan,html[data-theme="LM"] .nx-co,html[data-theme="LM"] .pill,html[data-theme="LM"] .subtab,html[data-theme="LM"] .aisub,html[data-theme="LM"] .tabsum,html[data-theme="LM"] .tp.accent{background:linear-gradient(160deg,#25282e 0%,#17191d 55%,#1e2126 100%);border:1px solid #33373f;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -1px 0 rgba(0,0,0,.6),0 8px 20px rgba(0,0,0,.45);color:var(--ink)}
+html[data-theme="LM"] .tile-v,html[data-theme="LM"] header.top h1{background:linear-gradient(180deg,#ffffff 0%,#d3d8e1 45%,#7d8594 55%,#eef0f4 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+html[data-theme="LM"] nav.tabs button[aria-selected=true]{background:linear-gradient(180deg,#3b3f47,#24272d);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
+html[data-theme="LM"] .tabsum-h,html[data-theme="LM"] .tabsum li::marker,html[data-theme="LM"] .tp.accent .tph{color:#c9ced8}html[data-theme="LM"] .tabsum b.hl{color:#fff}
+html[data-theme="LM"] .rbtn{background:linear-gradient(180deg,#e6e9ef,#9aa1ad);color:#0e0f12}
+html[data-theme="AN"]{--bg:#f6f1e4;--card:#fffdf6;--ink:#2b2a27;--sub:#5f5b52;--faint:#8a857a;--line:#2b2a27;--soft:#f1ead8;--up:#c2371f;--up-bg:#fbe1da;--down:#1f5fbf;--down-bg:#dfe9f8;--flat:#5f5b52;--flat-bg:#efe8d6;--accent:#c2371f;--accent-ink:#fff;--accent-soft:#fbe6c8;--p1:#fffdf6;--p2:#fffdf6;--p3:#fffdf6;--p4:#fffdf6;--p5:#fffdf6;--radius:14px;--shadow:2px 3px 0 rgba(43,42,39,.12)}
+html[data-theme="AN"] body{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .08 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>"),#f6f1e4}
+html[data-theme="AN"] .side{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .08 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>"),#efe8d6;border-right:2px solid #2b2a27}
+html[data-theme="AN"] .card,html[data-theme="AN"] .tile,html[data-theme="AN"] .scard,html[data-theme="AN"] .tp,html[data-theme="AN"] .note,html[data-theme="AN"] .tnote,html[data-theme="AN"] .actplan,html[data-theme="AN"] .nx-co,html[data-theme="AN"] .pill,html[data-theme="AN"] .subtab,html[data-theme="AN"] .aisub{border:2px solid #2b2a27;border-radius:18px 6px 16px 8px/8px 16px 6px 18px}
+html[data-theme="AN"] header.top h1,html[data-theme="AN"] h2,html[data-theme="AN"] .brand,html[data-theme="AN"] .tabsum-h,html[data-theme="AN"] .tile-n,html[data-theme="AN"] .nx-grp,html[data-theme="AN"] .sector-head h3{font-family:"Nanum Pen Script","Pretendard Variable",cursive;font-weight:400;letter-spacing:0}
+html[data-theme="AN"] header.top h1{font-size:40px}html[data-theme="AN"] h2{font-size:28px}html[data-theme="AN"] .tabsum-h{font-size:22px}html[data-theme="AN"] .tile-n{font-size:20px}html[data-theme="AN"] .sector-head h3{font-size:24px}html[data-theme="AN"] .brand{font-size:26px}
+html[data-theme="AN"] nav.tabs button[aria-selected=true]{background:transparent;color:#2b2a27;box-shadow:inset 0 -10px 0 #ffe680}
+html[data-theme="AN"] .tabsum,html[data-theme="AN"] .tp.accent{background:#ffe680;color:#2b2a27;border:2px solid #2b2a27;transform:rotate(-.4deg)}
+html[data-theme="AN"] .tabsum li::marker,html[data-theme="AN"] .tp.accent .tph{color:#c2371f}
+html[data-theme="AN"] b.hl{color:inherit;background:linear-gradient(transparent 55%,#ff9db5 55%,#ff9db5 90%,transparent 90%)}html[data-theme="AN"] .tabsum b.hl{background:linear-gradient(transparent 55%,#ffb3a1 55%,#ffb3a1 90%,transparent 90%)}
+html[data-theme="AN"] .rbtn{background:#2b2a27;color:#fffdf6;border-radius:20px 8px 18px 10px/10px 18px 8px 20px}
+html[data-theme="RI"]{--bg:#f3eee2;--card:#f8f4ea;--ink:#1b1b1b;--sub:#4b4b4b;--faint:#777;--line:#0078bf;--soft:#ece5d4;--up:#d1006f;--up-bg:#ffd3ea;--down:#0078bf;--down-bg:#d5ecfa;--flat:#4b4b4b;--flat-bg:#ece5d4;--accent:#0078bf;--accent-ink:#fff;--accent-soft:#d5ecfa;--p1:#f8f4ea;--p2:#f8f4ea;--p3:#f8f4ea;--p4:#f8f4ea;--p5:#f8f4ea;--radius:4px;--shadow:none}
+html[data-theme="RI"] body{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .12 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>"),#f3eee2}
+html[data-theme="RI"] .side{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .12 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>"),#ece5d4;border-right:2px solid #0078bf}
+html[data-theme="RI"] .card,html[data-theme="RI"] .tile,html[data-theme="RI"] .scard,html[data-theme="RI"] .tp,html[data-theme="RI"] .note,html[data-theme="RI"] .tnote,html[data-theme="RI"] .actplan,html[data-theme="RI"] .nx-co,html[data-theme="RI"] .pill,html[data-theme="RI"] .subtab,html[data-theme="RI"] .aisub{border:2px solid #0078bf}
+html[data-theme="RI"] header.top h1,html[data-theme="RI"] h2,html[data-theme="RI"] .brand,html[data-theme="RI"] .tile-v,html[data-theme="RI"] .nx-grp{font-family:"Black Han Sans","Pretendard Variable",sans-serif;font-weight:400;letter-spacing:0;color:#0078bf;text-shadow:2px 1px 0 rgba(255,72,176,.8)}
+html[data-theme="RI"] header.top h1{font-size:34px}
+html[data-theme="RI"] nav.tabs button[aria-selected=true]{background:#ff48b0;color:#1b1b1b}
+html[data-theme="RI"] .tabsum,html[data-theme="RI"] .tp.accent{background:#ff48b0;color:#1b1b1b;border:0}
+html[data-theme="RI"] .bento .b-big{background:#ffd600;border-color:#ffd600}
+html[data-theme="RI"] .tabsum-h,html[data-theme="RI"] .tabsum li::marker,html[data-theme="RI"] .tp.accent .tph{color:#1b1b1b}html[data-theme="RI"] .tabsum b.hl{color:#003e6b}html[data-theme="RI"] .tabsum b.up{color:#fff;background:#1b1b1b;padding:0 3px}html[data-theme="RI"] .tabsum b.down{color:#fff;background:#0078bf;padding:0 3px}
+html[data-theme="RI"] .rbtn{background:#0078bf;color:#fff;border-radius:4px}
 </style>
 <script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"A"}catch(e){document.documentElement.dataset.theme="A"}</script>
 </head>
@@ -669,9 +730,15 @@ const THEMES = [["A", "잉크·청록", "어두운 사이드바·청록 포인�
   ["AL", "애시드 라임", "검정·흰색에 형광 라임 한 색", ["#0c0c0c", "#d4ff3a", "#f2f2f2"]],
   ["WN", "웜 뉴트럴", "미색 바탕·테라코타 포인트", ["#f4f1ea", "#c96442", "#1f1e1d"]],
   ["MG", "메시 그라데이션", "흰 바탕 위 색 번짐·부드러운 그림자", ["#ff7ab6", "#635bff", "#ffb84d"]],
-  ["DG", "딥 그린 트레이딩", "깊은 청록 검정·민트 포인트", ["#0b0f0e", "#34d399", "#111716"]]];
+  ["DG", "딥 그린 트레이딩", "깊은 청록 검정·민트 포인트", ["#0b0f0e", "#34d399", "#111716"]],
+  ["GB", "글래스 벤토", "오로라 위 반투명 유리 타일", ["#ff5fa2", "#4f46e5", "#ff9f43"]],
+  ["CL", "클레이 3D", "말랑한 점토 입체감·파스텔", ["#e9e5ff", "#7c5cf0", "#ffb3c6"]],
+  ["DP", "도파민 팝", "굵은 글씨·검정 테두리·원색", ["#ffe94a", "#ff3d8b", "#3d7bff"]],
+  ["LM", "리퀴드 메탈", "흑연 바탕·크롬 숫자", ["#0e0f12", "#c9ced8", "#3a3f4a"]],
+  ["AN", "아날로그 노트", "종이 질감·손글씨·형광펜", ["#f6f1e4", "#ffe680", "#c2371f"]],
+  ["RI", "리소 프린트", "형광 핑크·파랑 인쇄 느낌", ["#ff48b0", "#0078bf", "#ffd600"]]];
 /* 위젯 색: 다크 테마(리니어·애시드·딥 그린)는 어둡게, A는 기기 다크 모드를 따르고, 나머지는 밝은 화면 */
-const DARK_THEMES = ["LN", "AL", "DG"];
+const DARK_THEMES = ["LN", "AL", "DG", "GB", "LM"];
 const isDark = () => DARK_THEMES.includes(document.documentElement.dataset.theme) || (document.documentElement.dataset.theme === "A" && matchMedia("(prefers-color-scheme: dark)").matches);
 let D = null, current = "t1";
 
