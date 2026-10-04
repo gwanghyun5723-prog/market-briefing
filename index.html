@@ -817,6 +817,7 @@ html[data-theme] button.sbtn{border:1px solid rgba(127,127,127,.34);background:v
 html[data-theme="NR"] button.sbtn{border:0;background:#ececee;box-shadow:3px 3px 7px #c4c4ca,-3px -3px 7px #fff}
 @media (max-width:900px){ nav.tabs button{white-space:normal;word-break:keep-all;line-height:1.15;font-size:10.5px;letter-spacing:-.02em} }
 @media (max-width:900px){ html[data-theme] nav.tabs button{white-space:normal;word-break:keep-all;line-height:1.15;font-size:10.5px;letter-spacing:-.02em} }
+html[data-theme] .gbtn{width:auto;height:34px;display:inline-flex;align-items:center;gap:5px;padding:0 13px 0 10px;border-radius:999px;font:inherit;font-size:13px;font-weight:700}
 </style>
 <script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"NR"}catch(e){document.documentElement.dataset.theme="NR"}</script>
 </head>
@@ -1583,7 +1584,7 @@ function render() {
     ${P ? `<span class="pill">시세 ${esc(fmtTime(P.updated_at))}</span>` : ""}
     ${DAYS.length > 1 ? `<select id="daysel" aria-label="날짜 선택">${DAYS.map(d => `<option ${d.date === D.date ? "selected" : ""}>${d.date}</option>`).join("")}</select>` : ""}
     <button type="button" class="rbtn" id="refresh" title="최신 브리핑·시세 다시 불러오기">${REFRESH}새로고침</button>
-    <button type="button" class="gbtn" id="themebtn" title="테마 바꾸기" aria-label="테마 바꾸기">${GEAR}</button>`;
+    <button type="button" class="gbtn" id="themebtn" title="테마 바꾸기">${GEAR}<span>테마</span></button>`;
   document.getElementById("themebtn").onclick = e => { e.stopPropagation(); toggleThemePop(e.currentTarget); };
   document.getElementById("refresh").onclick = e => refreshData(e.currentTarget);
   document.getElementById("sidemeta").innerHTML = `<b>데이터 기준</b><br>${esc(D.data_basis)}${CLICK_HINT}`;
