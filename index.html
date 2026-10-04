@@ -770,6 +770,16 @@ html[data-theme="NR"] .focus>div:nth-child(3){box-shadow:inset 5px 5px 11px #c4c
 html[data-theme="NR"] .pill .dot{background:#51cf66}
 html[data-theme="NR"] .tile-n::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:2px;background:#ced4da}
 html[data-theme="NR"] .tile:has(.tile-c.up) .tile-n::before{background:#ff6b6b}html[data-theme="NR"] .tile:has(.tile-c.down) .tile-n::before{background:#4dabf7}
+
+/* 테마 고르기: 좁은 화면은 바텀 시트 */
+.themebd{position:fixed;inset:0;z-index:39;background:rgba(0,0,0,.38)}
+.themepop.sheet{z-index:40;left:0;right:0;bottom:0;top:auto;width:auto;max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;padding:8px 14px calc(18px + env(safe-area-inset-bottom));overscroll-behavior:contain}
+.themepop.sheet::before{content:"";display:block;width:40px;height:5px;border-radius:3px;background:var(--faint);opacity:.5;margin:2px auto 10px}
+.themepop.sheet h4{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:var(--ink);position:sticky;top:-8px;background:inherit;margin:0 -14px 10px;padding:6px 14px;z-index:1}
+.themepop .tp-close{border:0;background:var(--soft);color:var(--ink);width:32px;height:32px;border-radius:50%;font-size:20px;line-height:1;display:grid;place-items:center;padding:0;box-shadow:none;flex-direction:row}
+.themepop.sheet .opts{grid-template-columns:1fr 1fr}
+html[data-theme="LG"] .themepop.sheet{background:rgba(250,251,255,.92)}html[data-theme="LG"] .themepop.sheet h4{background:rgba(250,251,255,.97)}
+@media (prefers-color-scheme: dark){ html[data-theme="LG"] .themepop.sheet{background:rgba(28,30,38,.94)}html[data-theme="LG"] .themepop.sheet h4{background:rgba(28,30,38,.98)} }
 </style>
 <script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"A"}catch(e){document.documentElement.dataset.theme="A"}</script>
 </head>
@@ -1572,22 +1582,32 @@ async function refreshData(btn) {
 /* 테마 고르기: 브라우저에 기억(localStorage), 바꾸면 위젯 색까지 다시 그린다 */
 const GEAR = svg('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>');
 function toggleThemePop(btn) {
-  const old = document.querySelector(".themepop");
-  if (old) { old.remove(); return; }
+  if (document.querySelector(".themepop")) { closeThemePop(); return; }
   const cur = document.documentElement.dataset.theme;
   const pop = document.createElement("div");
   pop.className = "themepop"; pop.setAttribute("role", "dialog"); pop.setAttribute("aria-label", "테마 선택");
   pop.innerHTML = `<h4>테마</h4><div class="opts">${THEMES.map(([k, nm, desc, sw]) =>
     `<button type="button" data-theme-pick="${k}" aria-pressed="${k === cur}"><span class="sw">${sw.map(c => `<i style="background:${c}"></i>`).join("")}</span>${esc(nm)}<small>${esc(desc)}</small></button>`).join("")}</div>`;
+  // 휴대폰처럼 좁은 화면은 아래에서 올라오는 시트로 띄워 목록 끝까지 스크롤할 수 있게 한다
+  if (innerWidth <= 640) {
+    pop.classList.add("sheet");
+    pop.querySelector("h4").insertAdjacentHTML("beforeend", `<button type="button" class="tp-close" aria-label="닫기">×</button>`);
+    const bd = document.createElement("div");
+    bd.className = "themebd";
+    document.body.appendChild(bd);
+    document.body.appendChild(pop);
+    return;
+  }
   document.body.appendChild(pop);
   const r = btn.getBoundingClientRect();
   pop.style.top = `${r.bottom + 8}px`;
   pop.style.left = `${Math.max(16, Math.min(r.right - pop.offsetWidth, innerWidth - pop.offsetWidth - 16))}px`;
 }
+const closeThemePop = () => { document.querySelector(".themepop")?.remove(); document.querySelector(".themebd")?.remove(); };
 function setTheme(k) {
   document.documentElement.dataset.theme = k;
   try { localStorage.setItem("mb-theme", k); } catch (e) {}
-  document.querySelector(".themepop")?.remove();
+  closeThemePop();
   render();
 }
 
@@ -1613,7 +1633,7 @@ const dlg = document.getElementById("stockdlg");
 document.addEventListener("click", e => {
   const tp = e.target.closest("[data-theme-pick]");
   if (tp) { setTheme(tp.dataset.themePick); return; }
-  if (!e.target.closest(".themepop")) document.querySelector(".themepop")?.remove();
+  if (!e.target.closest(".themepop") || e.target.closest(".tp-close")) closeThemePop();
   const b = e.target.closest(".sbtn");
   if (b) {
     dlg.innerHTML = stockCard(b.dataset.t, mentionMap(), true);
