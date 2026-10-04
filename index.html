@@ -494,6 +494,34 @@ html[data-theme="H"] .tp.accent .tph,html[data-theme="H"] .tp.accent .ttop li::m
 .nx-src{font-size:12px;color:var(--faint);margin-top:8px}
 .nx-src a{color:var(--faint)}
 @media (max-width:640px){.nx-kv{grid-template-columns:1fr}.nx-top li{grid-template-columns:1fr;gap:2px}}
+
+
+.nx-ic{display:inline-grid;place-items:center;width:var(--s);height:var(--s);border-radius:calc(var(--s) * .3);flex:none;background:var(--accent-soft);color:var(--accent)}
+.nx-ic svg{width:60%;height:60%}
+.nx-ic.g-green{background:rgba(18,184,134,.14);color:#0f9f74}
+.nx-ic.g-yellow{background:rgba(245,159,0,.15);color:#c77d00}
+.nx-ic.g-blue{background:rgba(49,130,246,.13);color:#2f6fd6}
+.nx-h{display:flex;align-items:center;gap:10px}
+.nx-cell{display:inline-flex;align-items:center;gap:6px}
+/* ── 경제 시황 벤토 그리드 ── */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;grid-auto-flow:dense;margin-bottom:14px}
+.bento .tile{border-radius:var(--radius);margin:0}
+.bento .b-big{grid-column:span 2;grid-row:span 2;padding:20px 22px}
+.bento .b-big .tile-v{font-size:44px;line-height:1.1;letter-spacing:-.04em;margin-top:4px}
+.bento .b-big .tile-c{font-size:16px}
+.bento .b-big .tile-ch{height:150px;margin-top:auto}
+.bento .b-sum{grid-column:span 2;grid-row:span 2;margin:0;display:flex;flex-direction:column}
+.bento .b-sum li{font-size:14px;margin:3px 0}
+.bento .b-wide{grid-column:span 2}
+.b-list .bl{display:flex;gap:10px;align-items:baseline;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
+.b-list .bl:first-of-type{border-top:0}
+.b-list .bl>b:first-child{min-width:64px;color:var(--accent);font-weight:700}
+.b-list .bl span{flex:1;min-width:0}
+.b-list .bl .tn{font-variant-numeric:tabular-nums}
+.b-nx .bl>b:first-child{min-width:14px}
+.bento .tile-v{white-space:normal;overflow-wrap:anywhere}
+.b-more{float:right;border:0;background:none;color:var(--accent);font:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:0}
+@media (max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.bento .tile{padding:14px}.bento .tile-v{font-size:17px}.bento .b-big .tile-v{font-size:36px}.bento .b-big .tile-ch{height:110px}.bento .b-sum{grid-row:auto}}
 /* ── 트렌드 테마 6종: 리니어 다크·핀테크 클린·애시드 라임·웜 뉴트럴·메시 그라데이션·딥 그린 ── */
 html[data-theme="LN"]{--bg:#08090a;--card:#0f1012;--ink:#f7f8f8;--sub:#8a8f98;--faint:#62666d;--line:rgba(255,255,255,.08);--soft:#16171a;--up:#ff6369;--up-bg:rgba(255,99,105,.12);--down:#5b9bff;--down-bg:rgba(91,155,255,.12);--flat:#8a8f98;--flat-bg:#16171a;--accent:#7c84e8;--accent-ink:#08090a;--accent-soft:rgba(124,132,232,.14);--warn:#fbbf24;--warn-bg:rgba(251,191,36,.12);--p1:#0f1012;--p2:#0f1012;--p3:#0f1012;--p4:#0f1012;--p5:#0f1012;--radius:12px;--shadow:none}
 html[data-theme="LN"] body{background:radial-gradient(900px 380px at 30% -120px,rgba(94,106,210,.28),transparent 70%),#08090a;font-feature-settings:'tnum'}
@@ -861,20 +889,35 @@ function indChart(name) {
   return box + (c.note ? `<span class="tile-note">${esc(c.note)}</span>` : "");
 }
 
+/* 경제 시황: 벤토 그리드(큰 코스피 타일 + 5줄 요약 + 작은 지표 타일 + 일정·Next TOP 타일) */
 function renderT1() {
   const t = D.tab1;
   if (t.fail_reason) return `<div class="fail">오늘 수집 실패: ${esc(t.fail_reason)}</div>`;
-  const tiles = t.indicators.map(i => `<div class="tile">
+  const dirc = i => i.dir === "up" ? "up" : i.dir === "down" ? "down" : "muted";
+  const tile = (i, cls = "") => `<div class="tile ${cls}">
       <span class="tile-n">${esc(i.name)}</span>
       <span class="tile-v">${esc(i.value)}</span>
-      <span class="tile-c ${i.dir === "up" ? "up" : i.dir === "down" ? "down" : "muted"}">${esc(i.change)}</span>
+      <span class="tile-c ${dirc(i)}">${esc(i.change)}</span>
       ${indChart(i.name)}
-      <span class="src">${esc(i.as_of)}${i.source ? ` · ${link(i.source, i.url)}` : ""}</span></div>`).join("");
+      <span class="src">${esc(i.as_of)}${i.source ? ` · ${link(i.source, i.url)}` : ""}</span></div>`;
+  const [hero, ...rest] = t.indicators;
+  const lines = (D.tab_summaries || {}).t1 || [];
+  const sum = lines.length ? `<div class="tabsum b-sum"><div class="tabsum-h">${SPARK}오늘의 ${lines.length}줄 요약</div><ol>${lines.map(x => `<li>${rich(x)}</li>`).join("")}</ol></div>` : "";
+  const sched = (t.schedule || []).slice(0, 3);
+  const schedTile = sched.length ? `<div class="tile b-wide b-list"><span class="tile-n">다가오는 일정</span>
+      ${sched.map(x => `<div class="bl"><b>${esc(x.date)}</b><span>${esc(x.event)}</span></div>`).join("")}</div>` : "";
+  const top = nxRank().top5.slice(0, 3);
+  const nxTile = top.length ? `<div class="tile b-list b-nx"><span class="tile-n">Next 섹터 TOP 3 <button type="button" class="b-more" onclick="show('t6')">더보기 ›</button></span>
+      ${top.map((c, i) => `<div class="bl"><b>${i + 1}</b><span>${esc(c.name)}<br><small class="muted nx-cell">${nxIcon(c.ind, 16)}${esc(c.ind.name)}</small></span><b class="tn">${nxTotal(c)}</b></div>`).join("")}</div>` : "";
   return `
-  ${watchList()}
-  <h2>주요 지표</h2>
-  <div class="tiles">${tiles}</div>
+  <div class="bento">
+    ${hero ? tile(hero, "b-big") : ""}${sum}
+    ${rest.map(i => tile(i)).join("")}
+    ${schedTile}${nxTile}
+  </div>
+  ${actPlan((D.tab_actions || {}).t1, (D.tab_focus || {}).t1)}
   <p class="src" style="margin:6px 2px 0">미니차트는 열람 시점 흐름(3개월)입니다. 타일 숫자는 기사로 확인한 종가이며, 출처가 한국투자증권 Open API인 타일(코스피·코스닥)은 자동 갱신된 시세입니다.</p>
+  ${watchList()}
   <h2>핵심 이슈</h2>
   ${t.issues.map((x, i) => `<div class="card issue"><span class="no">${i + 1}</span><div>
     <h3>${esc(x.title)}</h3><p>${esc(x.body)}</p>
@@ -993,10 +1036,50 @@ const NX_GROUPS = [["green", "🟢 변곡점 초입 · 관심 집중"], ["yellow
 const NX_SCORES = [["scurve", "① S-Curve"], ["accel", "② 침투 가속"], ["momentum", "③ 실적·수주"], ["valuation", "④ 밸류·선반영"], ["upside", "⑤ 1~3년 Upside"]];
 const nxTotal = c => NX_SCORES.reduce((a, [k]) => a + (+(c.scores || {})[k] || 0), 0);
 const nxSrc = list => (list || []).length ? `<div class="nx-src">출처: ${(list || []).map(x => link(x.name, x.url)).join(" · ")}</div>` : "";
+/* 산업 아이콘: key(또는 이름의 키워드)로 고른다. 새 산업은 icon 필드로 아래 이름 중 하나를 지정할 수 있다 */
+const NX_ICONS = {
+  photonics: '<rect x="13" y="7" width="8" height="10" rx="1.5"/><path d="M2 12h8M4 8l5 3M4 16l5-3M17 10v4"/>',
+  glass: '<rect x="3" y="7" width="13" height="13" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v11M6 17l7-7"/>',
+  bonding: '<rect x="4" y="3" width="16" height="4" rx="1"/><rect x="4" y="10" width="16" height="4" rx="1"/><rect x="4" y="17" width="16" height="4" rx="1"/><path d="M9 7v3M15 7v3M9 14v3M15 14v3"/>',
+  cooling: '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/>',
+  power: '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+  nuclear: '<circle cx="12" cy="12" r="1.6"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>',
+  battery: '<rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2M11 9l-2 3h3l-2 3"/>',
+  solid: '<rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2M6 7v10M10 7v10M14 7v10"/>',
+  car: '<path d="M5 16V11l2-5h10l2 5v5"/><path d="M3 16h18v3H3zM5 11h14"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="16.5" cy="19" r="1.5"/>',
+  satellite: '<rect x="9" y="9" width="6" height="6" rx="1" transform="rotate(45 12 12)"/><path d="M4 4l4 4M16 16l4 4M2 9l4-4M18 22l4-4M17 3a4 4 0 0 1 4 4"/>',
+  robot: '<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9.5 16.5h5M3 12v3M21 12v3"/>',
+  pill: '<rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-35 12 12)"/><path d="M9.2 7.9l5.6 8.2"/>',
+  antibody: '<path d="M12 21v-8M12 13 6 6M12 13l6-7M4.5 7.5 7 4.5M17 4.5l2.5 3"/><circle cx="12" cy="21" r="1"/>',
+  agent: '<path d="M4 5h16v11H9l-5 4z"/><path d="M12 8l.9 1.8L15 10.5l-2.1.8L12 13l-.9-1.7L9 10.5l2.1-.7z"/>',
+  quantum: '<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="9" ry="3.2"/><path d="M12 12l4-6"/><circle cx="16" cy="6" r="1.2"/>',
+  chip: '<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>',
+  curve: '<path d="M3 20c6 0 7-15 18-15"/><circle cx="12" cy="11" r="1.6"/>'
+};
+const NX_ICON_KEYS = {cpo: "photonics", glass: "glass", hybrid_bonding: "bonding", liquid_cooling: "cooling", hvdc: "power", smr: "nuclear",
+  dc_ess: "battery", ssb: "solid", robotaxi: "car", leo_space: "satellite", humanoid: "robot", oral_glp1: "pill", adc_bispecific: "antibody",
+  ai_agent: "agent", quantum: "quantum"};
+const NX_ICON_WORDS = [["포토닉스|광", "photonics"], ["유리", "glass"], ["본딩|패키징", "bonding"], ["냉각", "cooling"], ["전력|HVDC|변압|전선", "power"],
+  ["원전|SMR|원자력", "nuclear"], ["전고체", "solid"], ["ESS|배터리|2차전지", "battery"], ["자율주행|로보택시|자동차", "car"], ["위성|우주", "satellite"],
+  ["로봇|휴머노이드", "robot"], ["비만|GLP|치료제", "pill"], ["ADC|항체|바이오", "antibody"], ["에이전트|소프트웨어|SW", "agent"], ["양자", "quantum"], ["반도체|HBM|칩", "chip"]];
+function nxIcon(ind, size = 22) {
+  const k = ind.icon || NX_ICON_KEYS[ind.key] || (NX_ICON_WORDS.find(([w]) => new RegExp(w).test(ind.name)) || [])[1] || "curve";
+  return `<span class="nx-ic g-${esc(ind.group || "blue")}" style="--s:${size}px">${svg(NX_ICONS[k] || NX_ICONS.curve)}</span>`;
+}
+function nxRank() {
+  const N = window.MARKET_NEXT;
+  if (!N) return {all: [], ranked: [], top5: []};
+  const all = N.industries.flatMap(ind => (ind.companies || []).map(c => ({...c, ind})));
+  // 같은 기업이 여러 산업에 있으면 점수가 높은 쪽 하나만 순위에 넣는다. 동점이면 ④ 밸류·선반영 → ⑤ Upside 순
+  const byT = {};
+  for (const c of all) { const k = c.ticker || c.name; if (!byT[k] || nxTotal(c) > nxTotal(byT[k])) byT[k] = c; }
+  const ranked = Object.values(byT).sort((a, b) => nxTotal(b) - nxTotal(a) || (b.scores.valuation - a.scores.valuation) || (b.scores.upside - a.scores.upside));
+  return {all, ranked, top5: ranked.filter(c => !c.overheated).slice(0, 5)};  // ⚠️ 과열 기업은 TOP 5에서 빼고 전체 점수표에만 둔다
+}
 function renderT6() {
   const N = window.MARKET_NEXT;
   if (!N) return `<div class="fail">Next 섹터 탐색 데이터 없음</div>`;
-  const all = N.industries.flatMap(ind => (ind.companies || []).map(c => ({...c, ind})));
+  const {all, ranked, top5} = nxRank();
   const T = N.top_lines || {};
   const top = [["가장 매력적인 산업", T.best_industry], ["새로 변곡점에 진입한 산업", T.new_inflection], ["가장 매력적인 종목", T.best_stock],
     ["아직 이르지만 관찰할 종목", T.watch_early], ["⚠️ 과열 · 추격매수 주의", T.overheated]];
@@ -1010,12 +1093,7 @@ function renderT6() {
     ? `<ul class="insight">${N.changes.map(c => `<li><b>${esc(c.target)}</b> · ${esc(c.kind)}: ${esc(c.before ?? "—")} → <b>${esc(c.after ?? "—")}</b>${c.note ? ` — ${esc(c.note)}` : ""}</li>`).join("")}</ul>`
     : `<p class="small muted" style="margin:6px 0 0">${esc(N.changes_note || "크게 바뀐 산업·기업 없음")}</p>`}</div>`;
   // TOP 5 + 전체 점수표
-  // 같은 기업이 여러 산업에 있으면 점수가 높은 쪽 하나만 순위에 넣는다. 동점이면 ④ 밸류·선반영 → ⑤ Upside 순
-  const byT = {};
-  for (const c of all) { const k = c.ticker || c.name; if (!byT[k] || nxTotal(c) > nxTotal(byT[k])) byT[k] = c; }
-  const ranked = Object.values(byT).sort((a, b) => nxTotal(b) - nxTotal(a) || (b.scores.valuation - a.scores.valuation) || (b.scores.upside - a.scores.upside));
-  const top5 = ranked.filter(c => !c.overheated).slice(0, 5);  // ⚠️ 과열 기업은 TOP 5에서 빼고 전체 점수표에만 둔다
-  const row = (c, i) => `<tr class="${top5.includes(c) ? "hot" : ""}"><td class="tn">${i + 1}</td><td>${nameBtn(aiStock(c))}${c.overheated ? " ⚠️" : ""}</td><td class="small" style="min-width:130px">${esc(c.ind.name)}</td>
+  const row = (c, i) => `<tr class="${top5.includes(c) ? "hot" : ""}"><td class="tn">${i + 1}</td><td>${nameBtn(aiStock(c))}${c.overheated ? " ⚠️" : ""}</td><td class="small" style="min-width:150px"><span class="nx-cell">${nxIcon(c.ind, 22)}${esc(c.ind.name)}</span></td>
     ${NX_SCORES.map(([k]) => `<td class="tn">${esc((c.scores || {})[k] ?? "—")}</td>`).join("")}<td class="tn nx-score">${nxTotal(c)}<span class="nx-bar" style="width:${nxTotal(c)}px"></span></td></tr>`;
   const head = ["#", "기업", "산업", ...NX_SCORES.map(x => x[1]), "총점(50)"];
   h += `<div class="card"><div class="sector-head"><h3>최종 후보 TOP 5</h3><span class="small muted">5개 항목 × 10점 · ④는 덜 반영될수록 높은 점수 · ⚠️ 과열 기업 제외</span></div>
@@ -1036,7 +1114,7 @@ function renderT6() {
     if (!inds.length) continue;
     h += `<div class="nx-grp">${title} <span class="small muted">${inds.length}개 산업</span></div>`;
     h += inds.map(ind => `<div class="card">
-      <div class="sector-head"><h3>${esc(ind.name)}${ind.overheated ? " ⚠️" : ""}</h3><span class="chip">${esc(ind.stage)}</span></div>
+      <div class="sector-head"><h3 class="nx-h">${nxIcon(ind, 36)}${esc(ind.name)}${ind.overheated ? " ⚠️" : ""}</h3><span class="chip">${esc(ind.stage)}</span></div>
       <div class="nx-stage">${NX_STAGES.map(st => `<span class="${st === ind.stage ? "on" : ""}">${st}</span>`).join("")}</div>
       <div class="nx-kv"><div><b>침투율·상용화</b>${rich(ind.penetration || "확인 필요")}</div><div><b>증가 속도</b>${rich(ind.growth || "확인 필요")}</div><div><b>TAM</b>${rich(ind.tam || "확인 필요")}</div></div>
       ${(ind.recent_changes || []).length ? `<p class="nx-p"><b>최근 6~12개월</b></p><ul class="insight">${ind.recent_changes.map(x => `<li>${rich(x)}</li>`).join("")}</ul>` : ""}
@@ -1302,7 +1380,7 @@ function render() {
     return (lines.length ? `<div class="tabsum"><div class="tabsum-h">${SPARK}오늘의 ${lines.length}줄 요약</div><ol>${lines.map(x => `<li>${rich(x)}</li>`).join("")}</ol></div>` : "")
       + actPlan((D.tab_actions || {})[id], (D.tab_focus || {})[id]);
   };
-  main.innerHTML = TABS.map(([id]) => `<section class="tab" id="${id}" role="tabpanel">${id === "t5" || id === "t6" ? "" : tabSum(id)}${fns[id]()}</section>`).join("");
+  main.innerHTML = TABS.map(([id]) => `<section class="tab" id="${id}" role="tabpanel">${["t1", "t5", "t6"].includes(id) ? "" : tabSum(id)}${fns[id]()}</section>`).join("");
   document.getElementById("foot").innerHTML = `
     <div class="muted small" style="margin-bottom:6px">전체 출처</div>
     <ol class="srclist">${D.sources.map(s => `<li>${typeof s === "string" ? esc(s) : link(s.name, s.url)}</li>`).join("")}</ol>
