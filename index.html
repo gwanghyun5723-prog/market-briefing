@@ -474,7 +474,7 @@ html[data-theme="H"] .tp.accent .tph,html[data-theme="H"] .tp.accent .ttop li::m
 .nx-grp .small{font-weight:500}
 .nx-stage{display:flex;gap:3px;margin:10px 0 4px}
 .nx-stage span{flex:1;font-size:10.5px;text-align:center;padding:4px 2px;border-radius:6px;background:var(--flat-bg);color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.nx-stage span.on{background:var(--accent);color:#fff;font-weight:700}
+.nx-stage span.on{background:var(--accent);color:var(--accent-ink);font-weight:700}
 .nx-kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
 .nx-kv div{background:var(--flat-bg);border-radius:10px;padding:9px 11px;font-size:13px}
 .nx-kv b{display:block;font-size:11px;color:var(--faint);font-weight:600;margin-bottom:3px}
@@ -494,6 +494,108 @@ html[data-theme="H"] .tp.accent .tph,html[data-theme="H"] .tp.accent .ttop li::m
 .nx-src{font-size:12px;color:var(--faint);margin-top:8px}
 .nx-src a{color:var(--faint)}
 @media (max-width:640px){.nx-kv{grid-template-columns:1fr}.nx-top li{grid-template-columns:1fr;gap:2px}}
+/* ── 트렌드 테마 6종: 리니어 다크·핀테크 클린·애시드 라임·웜 뉴트럴·메시 그라데이션·딥 그린 ── */
+html[data-theme="LN"]{--bg:#08090a;--card:#0f1012;--ink:#f7f8f8;--sub:#8a8f98;--faint:#62666d;--line:rgba(255,255,255,.08);--soft:#16171a;--up:#ff6369;--up-bg:rgba(255,99,105,.12);--down:#5b9bff;--down-bg:rgba(91,155,255,.12);--flat:#8a8f98;--flat-bg:#16171a;--accent:#7c84e8;--accent-ink:#08090a;--accent-soft:rgba(124,132,232,.14);--warn:#fbbf24;--warn-bg:rgba(251,191,36,.12);--p1:#0f1012;--p2:#0f1012;--p3:#0f1012;--p4:#0f1012;--p5:#0f1012;--radius:12px;--shadow:none}
+html[data-theme="LN"] body{background:radial-gradient(900px 380px at 30% -120px,rgba(94,106,210,.28),transparent 70%),#08090a;font-feature-settings:'tnum'}
+html[data-theme="LN"] .side{background:rgba(255,255,255,.02);border-right:1px solid var(--line)}
+html[data-theme="LN"] nav.tabs button[aria-selected=true]{background:rgba(255,255,255,.08);color:#f7f8f8}
+html[data-theme="LN"] .brand .logo{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="LN"] .card,html[data-theme="LN"] .tile,html[data-theme="LN"] .scard,html[data-theme="LN"] .tp,html[data-theme="LN"] .note,html[data-theme="LN"] .tnote,html[data-theme="LN"] .actplan,html[data-theme="LN"] .subtab,html[data-theme="LN"] .aisub,html[data-theme="LN"] .pill{border:1px solid var(--line)}
+html[data-theme="LN"] .tabsum,html[data-theme="LN"] .tp.accent{background:rgba(255,255,255,.035);color:#f7f8f8;border:1px solid var(--line)}
+html[data-theme="LN"] .tabsum-h,html[data-theme="LN"] .tp.accent .tph,html[data-theme="LN"] .tabsum li::marker,html[data-theme="LN"] .tp.accent .ttop li::marker{color:#9ea6ff}
+html[data-theme="LN"] .tabsum b.hl,html[data-theme="LN"] .tp.accent b.hl{color:#c7cbff}
+html[data-theme="LN"] .tabsum b.up,html[data-theme="LN"] .tp.accent b.up{color:#ff8a8f}
+html[data-theme="LN"] .tabsum b.down,html[data-theme="LN"] .tp.accent b.down{color:#8cbcff}
+html[data-theme="LN"] .tabsum .k,html[data-theme="LN"] .tp.accent .tsub,html[data-theme="LN"] .tp.accent .tsrc{color:inherit;opacity:.85}
+html[data-theme="LN"] .actplan{border-left:3px solid var(--accent)}
+html[data-theme="LN"] .rbtn{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="LN"] header.top h1,html[data-theme="LN"] .tile-v{letter-spacing:-.035em}
+html[data-theme="LN"]{color-scheme:dark}
+html[data-theme="FC"]{--bg:#f2f4f6;--card:#ffffff;--ink:#191f28;--sub:#6b7684;--faint:#8b95a1;--line:#eef0f3;--soft:#f2f4f6;--up:#f04452;--up-bg:#fdeced;--down:#3182f6;--down-bg:#e8f3ff;--flat:#6b7684;--flat-bg:#f2f4f6;--accent:#3182f6;--accent-ink:#fff;--accent-soft:#e8f3ff;--warn:#b45309;--warn-bg:#fff6e5;--p1:#fff;--p2:#fff;--p3:#fff;--p4:#fff;--p5:#fff;--radius:20px;--shadow:0 1px 2px rgba(0,0,0,.03)}
+html[data-theme="FC"] body{background:#f2f4f6;font-feature-settings:'tnum'}
+html[data-theme="FC"] .side{background:#ffffff;border-right:1px solid var(--line)}
+html[data-theme="FC"] nav.tabs button[aria-selected=true]{background:#e8f3ff;color:#3182f6}
+html[data-theme="FC"] .brand .logo{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="FC"] .card,html[data-theme="FC"] .tile,html[data-theme="FC"] .scard,html[data-theme="FC"] .tp,html[data-theme="FC"] .note,html[data-theme="FC"] .tnote,html[data-theme="FC"] .actplan,html[data-theme="FC"] .subtab,html[data-theme="FC"] .aisub,html[data-theme="FC"] .pill{border:1px solid var(--line)}
+html[data-theme="FC"] .tabsum,html[data-theme="FC"] .tp.accent{background:#ffffff;color:#333d4b;border:1px solid var(--line)}
+html[data-theme="FC"] .tabsum-h,html[data-theme="FC"] .tp.accent .tph,html[data-theme="FC"] .tabsum li::marker,html[data-theme="FC"] .tp.accent .ttop li::marker{color:#3182f6}
+html[data-theme="FC"] .tabsum b.hl,html[data-theme="FC"] .tp.accent b.hl{color:#3182f6}
+html[data-theme="FC"] .tabsum b.up,html[data-theme="FC"] .tp.accent b.up{color:#f04452}
+html[data-theme="FC"] .tabsum b.down,html[data-theme="FC"] .tp.accent b.down{color:#3182f6}
+html[data-theme="FC"] .tabsum .k,html[data-theme="FC"] .tp.accent .tsub,html[data-theme="FC"] .tp.accent .tsrc{color:inherit;opacity:.85}
+html[data-theme="FC"] .actplan{border-left:3px solid var(--accent)}
+html[data-theme="FC"] .rbtn{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="FC"] header.top h1,html[data-theme="FC"] .tile-v{letter-spacing:-.035em}
+html[data-theme="FC"] .card,html[data-theme="FC"] .tile,html[data-theme="FC"] .scard,html[data-theme="FC"] .tp{border:0}
+html[data-theme="FC"] .tile-v{font-size:24px}
+html[data-theme="AL"]{--bg:#0c0c0c;--card:#141414;--ink:#f2f2f2;--sub:#8a8a8a;--faint:#666;--line:#232323;--soft:#1b1b1b;--up:#ff5c5c;--up-bg:rgba(255,92,92,.12);--down:#5ca8ff;--down-bg:rgba(92,168,255,.12);--flat:#8a8a8a;--flat-bg:#1b1b1b;--accent:#d4ff3a;--accent-ink:#0c0c0c;--accent-soft:rgba(212,255,58,.12);--warn:#ffd23a;--warn-bg:rgba(255,210,58,.12);--p1:#141414;--p2:#141414;--p3:#141414;--p4:#141414;--p5:#141414;--radius:16px;--shadow:none}
+html[data-theme="AL"] body{background:#0c0c0c;font-feature-settings:'tnum'}
+html[data-theme="AL"] .side{background:#0c0c0c;border-right:1px solid var(--line)}
+html[data-theme="AL"] nav.tabs button[aria-selected=true]{background:#d4ff3a;color:#0c0c0c}
+html[data-theme="AL"] .brand .logo{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="AL"] .card,html[data-theme="AL"] .tile,html[data-theme="AL"] .scard,html[data-theme="AL"] .tp,html[data-theme="AL"] .note,html[data-theme="AL"] .tnote,html[data-theme="AL"] .actplan,html[data-theme="AL"] .subtab,html[data-theme="AL"] .aisub,html[data-theme="AL"] .pill{border:1px solid var(--line)}
+html[data-theme="AL"] .tabsum,html[data-theme="AL"] .tp.accent{background:#d4ff3a;color:#0c0c0c;border:1px solid var(--line)}
+html[data-theme="AL"] .tabsum-h,html[data-theme="AL"] .tp.accent .tph,html[data-theme="AL"] .tabsum li::marker,html[data-theme="AL"] .tp.accent .ttop li::marker{color:#0c0c0c}
+html[data-theme="AL"] .tabsum b.hl,html[data-theme="AL"] .tp.accent b.hl{color:#0c0c0c}
+html[data-theme="AL"] .tabsum b.up,html[data-theme="AL"] .tp.accent b.up{color:#c4161c}
+html[data-theme="AL"] .tabsum b.down,html[data-theme="AL"] .tp.accent b.down{color:#0b4fc4}
+html[data-theme="AL"] .tabsum .k,html[data-theme="AL"] .tp.accent .tsub,html[data-theme="AL"] .tp.accent .tsrc{color:inherit;opacity:.85}
+html[data-theme="AL"] .actplan{border-left:3px solid var(--accent)}
+html[data-theme="AL"] .rbtn{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="AL"] header.top h1,html[data-theme="AL"] .tile-v{letter-spacing:-.035em}
+html[data-theme="AL"]{color-scheme:dark}
+html[data-theme="AL"] header.top h1{font-size:30px;letter-spacing:-.04em}
+html[data-theme="AL"] .tabsum b{font-weight:800}
+html[data-theme="WN"]{--bg:#f4f1ea;--card:#fbfaf6;--ink:#1f1e1d;--sub:#6f6a61;--faint:#9a948a;--line:#e4ded2;--soft:#ece7dc;--up:#c8402e;--up-bg:#f8e4df;--down:#2f62a8;--down-bg:#e2eaf5;--flat:#6f6a61;--flat-bg:#ece7dc;--accent:#c96442;--accent-ink:#fff;--accent-soft:#f5e3da;--warn:#a15c07;--warn-bg:#f7ead2;--p1:#fbfaf6;--p2:#fbfaf6;--p3:#fbfaf6;--p4:#fbfaf6;--p5:#fbfaf6;--radius:14px;--shadow:none}
+html[data-theme="WN"] body{background:#f4f1ea;font-feature-settings:'tnum'}
+html[data-theme="WN"] .side{background:#efebe2;border-right:1px solid var(--line)}
+html[data-theme="WN"] nav.tabs button[aria-selected=true]{background:#1f1e1d;color:#f4f1ea}
+html[data-theme="WN"] .brand .logo{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="WN"] .card,html[data-theme="WN"] .tile,html[data-theme="WN"] .scard,html[data-theme="WN"] .tp,html[data-theme="WN"] .note,html[data-theme="WN"] .tnote,html[data-theme="WN"] .actplan,html[data-theme="WN"] .subtab,html[data-theme="WN"] .aisub,html[data-theme="WN"] .pill{border:1px solid var(--line)}
+html[data-theme="WN"] .tabsum,html[data-theme="WN"] .tp.accent{background:#1f1e1d;color:#f4f1ea;border:1px solid var(--line)}
+html[data-theme="WN"] .tabsum-h,html[data-theme="WN"] .tp.accent .tph,html[data-theme="WN"] .tabsum li::marker,html[data-theme="WN"] .tp.accent .ttop li::marker{color:#e8a07f}
+html[data-theme="WN"] .tabsum b.hl,html[data-theme="WN"] .tp.accent b.hl{color:#f0b493}
+html[data-theme="WN"] .tabsum b.up,html[data-theme="WN"] .tp.accent b.up{color:#ff9b8a}
+html[data-theme="WN"] .tabsum b.down,html[data-theme="WN"] .tp.accent b.down{color:#9cc0ff}
+html[data-theme="WN"] .tabsum .k,html[data-theme="WN"] .tp.accent .tsub,html[data-theme="WN"] .tp.accent .tsrc{color:inherit;opacity:.85}
+html[data-theme="WN"] .actplan{border-left:3px solid var(--accent)}
+html[data-theme="WN"] .rbtn{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="WN"] header.top h1,html[data-theme="WN"] .tile-v{letter-spacing:-.035em}
+html[data-theme="WN"] header.top h1{font-family:"Nanum Myeongjo","Noto Serif KR",serif;font-weight:800}
+html[data-theme="MG"]{--bg:#ffffff;--card:rgba(255,255,255,.82);--ink:#0a2540;--sub:#4f5d75;--faint:#8792a6;--line:rgba(10,37,64,.07);--soft:rgba(246,248,252,.9);--up:#e5484d;--up-bg:#fdecec;--down:#3d63dd;--down-bg:#e9eefc;--flat:#4f5d75;--flat-bg:#f1f4f9;--accent:#635bff;--accent-ink:#fff;--accent-soft:#eeedff;--warn:#b45309;--warn-bg:#fff6e5;--p1:rgba(255,255,255,.82);--p2:rgba(255,255,255,.82);--p3:rgba(255,255,255,.82);--p4:rgba(255,255,255,.82);--p5:rgba(255,255,255,.82);--radius:16px;--shadow:0 8px 24px rgba(10,37,64,.07)}
+html[data-theme="MG"] body{background:radial-gradient(700px 360px at 0% 0%,rgba(255,122,182,.32),transparent 70%),radial-gradient(800px 380px at 55% -10%,rgba(99,91,255,.30),transparent 70%),radial-gradient(600px 360px at 100% 10%,rgba(255,184,77,.28),transparent 70%),#ffffff;font-feature-settings:'tnum'}
+html[data-theme="MG"] .side{background:rgba(255,255,255,.6);border-right:1px solid var(--line)}
+html[data-theme="MG"] nav.tabs button[aria-selected=true]{background:#635bff;color:#fff}
+html[data-theme="MG"] .brand .logo{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="MG"] .card,html[data-theme="MG"] .tile,html[data-theme="MG"] .scard,html[data-theme="MG"] .tp,html[data-theme="MG"] .note,html[data-theme="MG"] .tnote,html[data-theme="MG"] .actplan,html[data-theme="MG"] .subtab,html[data-theme="MG"] .aisub,html[data-theme="MG"] .pill{border:1px solid var(--line)}
+html[data-theme="MG"] .tabsum,html[data-theme="MG"] .tp.accent{background:rgba(255,255,255,.78);color:#0a2540;border:1px solid var(--line)}
+html[data-theme="MG"] .tabsum-h,html[data-theme="MG"] .tp.accent .tph,html[data-theme="MG"] .tabsum li::marker,html[data-theme="MG"] .tp.accent .ttop li::marker{color:#635bff}
+html[data-theme="MG"] .tabsum b.hl,html[data-theme="MG"] .tp.accent b.hl{color:#635bff}
+html[data-theme="MG"] .tabsum b.up,html[data-theme="MG"] .tp.accent b.up{color:#e5484d}
+html[data-theme="MG"] .tabsum b.down,html[data-theme="MG"] .tp.accent b.down{color:#3d63dd}
+html[data-theme="MG"] .tabsum .k,html[data-theme="MG"] .tp.accent .tsub,html[data-theme="MG"] .tp.accent .tsrc{color:inherit;opacity:.85}
+html[data-theme="MG"] .actplan{border-left:3px solid var(--accent)}
+html[data-theme="MG"] .rbtn{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="MG"] header.top h1,html[data-theme="MG"] .tile-v{letter-spacing:-.035em}
+html[data-theme="MG"] body{background-attachment:fixed}
+html[data-theme="MG"] .side,html[data-theme="MG"] .card,html[data-theme="MG"] .tile,html[data-theme="MG"] .tabsum{backdrop-filter:blur(16px)}
+html[data-theme="DG"]{--bg:#0b0f0e;--card:#111716;--ink:#e7f0ec;--sub:#82938b;--faint:#5f6f68;--line:rgba(255,255,255,.07);--soft:#151c1a;--up:#ff5f6d;--up-bg:rgba(255,95,109,.12);--down:#5aa2ff;--down-bg:rgba(90,162,255,.12);--flat:#82938b;--flat-bg:#151c1a;--accent:#34d399;--accent-ink:#06281c;--accent-soft:rgba(52,211,153,.12);--warn:#fbbf24;--warn-bg:rgba(251,191,36,.12);--p1:#111716;--p2:#111716;--p3:#111716;--p4:#111716;--p5:#111716;--radius:14px;--shadow:none}
+html[data-theme="DG"] body{background:radial-gradient(800px 320px at 85% -120px,rgba(52,211,153,.16),transparent 70%),#0b0f0e;font-feature-settings:'tnum'}
+html[data-theme="DG"] .side{background:#0d1211;border-right:1px solid var(--line)}
+html[data-theme="DG"] nav.tabs button[aria-selected=true]{background:#1e2a27;color:#e7f0ec}
+html[data-theme="DG"] .brand .logo{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="DG"] .card,html[data-theme="DG"] .tile,html[data-theme="DG"] .scard,html[data-theme="DG"] .tp,html[data-theme="DG"] .note,html[data-theme="DG"] .tnote,html[data-theme="DG"] .actplan,html[data-theme="DG"] .subtab,html[data-theme="DG"] .aisub,html[data-theme="DG"] .pill{border:1px solid var(--line)}
+html[data-theme="DG"] .tabsum,html[data-theme="DG"] .tp.accent{background:#111716;color:#e7f0ec;border:1px solid var(--line)}
+html[data-theme="DG"] .tabsum-h,html[data-theme="DG"] .tp.accent .tph,html[data-theme="DG"] .tabsum li::marker,html[data-theme="DG"] .tp.accent .ttop li::marker{color:#34d399}
+html[data-theme="DG"] .tabsum b.hl,html[data-theme="DG"] .tp.accent b.hl{color:#6ee7b7}
+html[data-theme="DG"] .tabsum b.up,html[data-theme="DG"] .tp.accent b.up{color:#ff8a94}
+html[data-theme="DG"] .tabsum b.down,html[data-theme="DG"] .tp.accent b.down{color:#8cbcff}
+html[data-theme="DG"] .tabsum .k,html[data-theme="DG"] .tp.accent .tsub,html[data-theme="DG"] .tp.accent .tsrc{color:inherit;opacity:.85}
+html[data-theme="DG"] .actplan{border-left:3px solid var(--accent)}
+html[data-theme="DG"] .rbtn{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="DG"] header.top h1,html[data-theme="DG"] .tile-v{letter-spacing:-.035em}
+html[data-theme="DG"]{color-scheme:dark}
+.themepop{max-height:calc(100vh - 90px);overflow:auto}
 </style>
 <script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"A"}catch(e){document.documentElement.dataset.theme="A"}</script>
 </head>
@@ -533,9 +635,16 @@ const CH_COLORS = ["#6b5cff", "#f04452", "#12b886", "#f59f00", "#3182f6", "#e649
 const THEMES = [["A", "잉크·청록", "어두운 사이드바·청록 포인트", ["#0f1419", "#0d9488", "#f4f5f7"]],
   ["D", "네이비·골드", "프라이빗뱅킹 리포트", ["#14213d", "#b8892d", "#f7f5f0"]],
   ["E", "오로라 글래스", "그라데이션·반투명 카드", ["#7c3aed", "#2563eb", "#ffe3f1"]],
-  ["H", "노션 웜", "따뜻한 메모장 느낌", ["#fbf3db", "#0f7b6c", "#fbfaf8"]]];
-/* 위젯 색: A는 기기 다크 모드를 따르고, 나머지 테마는 밝은 화면 */
-const isDark = () => document.documentElement.dataset.theme === "A" && matchMedia("(prefers-color-scheme: dark)").matches;
+  ["H", "노션 웜", "따뜻한 메모장 느낌", ["#fbf3db", "#0f7b6c", "#fbfaf8"]],
+  ["LN", "리니어 다크", "검정 바탕·은은한 보랏빛", ["#08090a", "#7c84e8", "#1c1d22"]],
+  ["FC", "핀테크 클린", "큰 숫자·넉넉한 여백·파란 포인트", ["#ffffff", "#3182f6", "#f2f4f6"]],
+  ["AL", "애시드 라임", "검정·흰색에 형광 라임 한 색", ["#0c0c0c", "#d4ff3a", "#f2f2f2"]],
+  ["WN", "웜 뉴트럴", "미색 바탕·테라코타 포인트", ["#f4f1ea", "#c96442", "#1f1e1d"]],
+  ["MG", "메시 그라데이션", "흰 바탕 위 색 번짐·부드러운 그림자", ["#ff7ab6", "#635bff", "#ffb84d"]],
+  ["DG", "딥 그린 트레이딩", "깊은 청록 검정·민트 포인트", ["#0b0f0e", "#34d399", "#111716"]]];
+/* 위젯 색: 다크 테마(리니어·애시드·딥 그린)는 어둡게, A는 기기 다크 모드를 따르고, 나머지는 밝은 화면 */
+const DARK_THEMES = ["LN", "AL", "DG"];
+const isDark = () => DARK_THEMES.includes(document.documentElement.dataset.theme) || (document.documentElement.dataset.theme === "A" && matchMedia("(prefers-color-scheme: dark)").matches);
 let D = null, current = "t1";
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
