@@ -665,6 +665,54 @@ html[data-theme="LM"] .tabsum b.down{color:#a6ceff}
 html[data-theme="LM"] a{color:#cdd8ee}
 html[data-theme="LM"] nav.tabs button{color:#b9bfca}
 html[data-theme="LM"] .chip{color:#e3e6eb}
+/* ── 리퀴드 글래스(iOS 26 느낌): 선명한 배경 위 맑은 유리, 가장자리 빛 반사, 둥근 캡슐 컨트롤, 휴대폰은 아래쪽 떠 있는 탭 바 · 기기 다크 모드 따라감 ── */
+html[data-theme="LG"]{--bg:#eef3fb;--card:rgba(255,255,255,.3);--ink:#111114;--sub:#3c3c43;--faint:#6b6b73;--line:rgba(255,255,255,.55);--soft:rgba(255,255,255,.35);
+  --up:#e5262f;--up-bg:rgba(255,59,48,.14);--down:#0063d6;--down-bg:rgba(0,122,255,.13);--flat:#3c3c43;--flat-bg:rgba(255,255,255,.4);
+  --accent:#007aff;--accent-ink:#fff;--accent-soft:rgba(0,122,255,.14);--warn:#b45309;--warn-bg:rgba(255,204,0,.18);
+  --p1:rgba(255,255,255,.3);--p2:rgba(255,255,255,.3);--p3:rgba(255,255,255,.3);--p4:rgba(255,255,255,.3);--p5:rgba(255,255,255,.3);--radius:26px;--shadow:none}
+html[data-theme="LG"] body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Pretendard Variable",Pretendard,"Apple SD Gothic Neo",sans-serif;
+  background:radial-gradient(900px 640px at 8% 6%,#7cc4ff 0,transparent 62%),radial-gradient(800px 620px at 92% 12%,#ff9ad5 0,transparent 60%),radial-gradient(900px 700px at 70% 95%,#ffd27a 0,transparent 62%),radial-gradient(800px 600px at 10% 100%,#8ef0d2 0,transparent 60%),#eef3fb;background-attachment:fixed}
+html[data-theme="LG"] .card,html[data-theme="LG"] .tile,html[data-theme="LG"] .scard,html[data-theme="LG"] .tp,html[data-theme="LG"] .note,html[data-theme="LG"] .tnote,html[data-theme="LG"] .actplan,html[data-theme="LG"] .nx-co,html[data-theme="LG"] .subtab,html[data-theme="LG"] .aisub,html[data-theme="LG"] .pill,html[data-theme="LG"] .tabsum{background:linear-gradient(135deg,rgba(255,255,255,.42),rgba(255,255,255,.16));backdrop-filter:blur(22px) saturate(190%);-webkit-backdrop-filter:blur(22px) saturate(190%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.95),inset 1px 0 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.3),inset -1px 0 0 rgba(255,255,255,.25),0 10px 34px rgba(20,40,90,.12)}
+html[data-theme="LG"] .tabsum{color:var(--ink)}
+html[data-theme="LG"] .tabsum-h,html[data-theme="LG"] .tabsum li::marker,html[data-theme="LG"] .tp.accent .tph{color:#007aff}
+html[data-theme="LG"] .tabsum b.hl,html[data-theme="LG"] .tp.accent b.hl{color:#0057c2}
+html[data-theme="LG"] .side{background:transparent;border-right:0;position:sticky}
+html[data-theme="LG"] .side::before{content:"";position:absolute;inset:10px;border-radius:28px;z-index:-1;background:linear-gradient(135deg,rgba(255,255,255,.42),rgba(255,255,255,.16));backdrop-filter:blur(22px) saturate(190%);-webkit-backdrop-filter:blur(22px) saturate(190%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.95),inset 1px 0 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.3),inset -1px 0 0 rgba(255,255,255,.25),0 10px 34px rgba(20,40,90,.12)}
+html[data-theme="LG"] .side{z-index:5}
+html[data-theme="LG"] nav.tabs button{border-radius:999px;color:var(--sub)}
+html[data-theme="LG"] nav.tabs button[aria-selected=true]{background:rgba(255,255,255,.65);color:#007aff;box-shadow:inset 0 1px 0 #fff,0 4px 14px rgba(20,40,90,.12)}
+html[data-theme="LG"] .rbtn,html[data-theme="LG"] .gbtn,html[data-theme="LG"] .meta select{border-radius:999px}
+html[data-theme="LG"] .rbtn{background:rgba(0,122,255,.88);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 6px 18px rgba(0,122,255,.3)}
+html[data-theme="LG"] .brand .logo{background:linear-gradient(160deg,#5ac8fa,#007aff);border-radius:11px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+html[data-theme="LG"] header.top h1{font-size:30px;letter-spacing:-.035em}
+html[data-theme="LG"] .bento .b-big .tile-v{font-size:52px;font-weight:700;letter-spacing:-.045em}
+html[data-theme="LG"] .tile-v{font-weight:700}
+html[data-theme="LG"] .themepop{background:linear-gradient(135deg,rgba(255,255,255,.42),rgba(255,255,255,.16));backdrop-filter:blur(22px) saturate(190%);-webkit-backdrop-filter:blur(22px) saturate(190%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.95),inset 1px 0 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.3),inset -1px 0 0 rgba(255,255,255,.25),0 10px 34px rgba(20,40,90,.12);background:rgba(255,255,255,.7)}
+html[data-theme="LG"] .chip{background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.7)}
+@media (prefers-color-scheme: dark){
+  html[data-theme="LG"]{--bg:#05070d;--card:rgba(255,255,255,.08);--ink:#f5f5f7;--sub:#c7c7cc;--faint:#98989f;--line:rgba(255,255,255,.16);--soft:rgba(255,255,255,.08);
+    --up:#ff6961;--up-bg:rgba(255,69,58,.18);--down:#64a8ff;--down-bg:rgba(10,132,255,.2);--flat:#c7c7cc;--flat-bg:rgba(255,255,255,.1);
+    --accent:#0a84ff;--accent-soft:rgba(10,132,255,.2);--p1:rgba(255,255,255,.08);--p2:rgba(255,255,255,.08);--p3:rgba(255,255,255,.08);--p4:rgba(255,255,255,.08);--p5:rgba(255,255,255,.08);color-scheme:dark}
+  html[data-theme="LG"] body{background:radial-gradient(900px 640px at 8% 6%,#1d4e9e 0,transparent 62%),radial-gradient(800px 620px at 92% 12%,#7a2a6e 0,transparent 60%),radial-gradient(900px 700px at 70% 95%,#7a4a10 0,transparent 62%),radial-gradient(800px 600px at 10% 100%,#0e5a4a 0,transparent 60%),#05070d;background-attachment:fixed}
+  html[data-theme="LG"] .card,html[data-theme="LG"] .tile,html[data-theme="LG"] .scard,html[data-theme="LG"] .tp,html[data-theme="LG"] .note,html[data-theme="LG"] .tnote,html[data-theme="LG"] .actplan,html[data-theme="LG"] .nx-co,html[data-theme="LG"] .subtab,html[data-theme="LG"] .aisub,html[data-theme="LG"] .pill,html[data-theme="LG"] .tabsum,html[data-theme="LG"] .side::before{background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),inset 1px 0 0 rgba(255,255,255,.15),inset 0 -1px 0 rgba(255,255,255,.08),0 10px 34px rgba(0,0,0,.35)}
+  html[data-theme="LG"] .tabsum-h,html[data-theme="LG"] .tabsum li::marker,html[data-theme="LG"] .tp.accent .tph{color:#64b5ff}
+  html[data-theme="LG"] .tabsum b.hl,html[data-theme="LG"] .tp.accent b.hl{color:#9ccfff}
+  html[data-theme="LG"] nav.tabs button[aria-selected=true]{background:rgba(255,255,255,.16);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+  html[data-theme="LG"] .themepop{background:rgba(30,32,40,.85)}
+  html[data-theme="LG"] .chip{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:var(--ink)}
+}
+@media (max-width:900px){
+  html[data-theme="LG"] .side{padding:10px 14px}
+  html[data-theme="LG"] .side::before{inset:0;border-radius:0 0 22px 22px}
+  html[data-theme="LG"] nav.tabs{position:fixed;z-index:20;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));width:min(560px,calc(100vw - 20px));
+    justify-content:space-between;padding:6px;border-radius:999px;background:linear-gradient(135deg,rgba(255,255,255,.42),rgba(255,255,255,.16));backdrop-filter:blur(22px) saturate(190%);-webkit-backdrop-filter:blur(22px) saturate(190%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.95),inset 1px 0 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.3),inset -1px 0 0 rgba(255,255,255,.25),0 10px 34px rgba(20,40,90,.12)}
+  html[data-theme="LG"] nav.tabs button{flex:1 1 0;flex-direction:column;gap:2px;padding:6px 2px;font-size:10.5px;font-weight:600;text-align:center;justify-content:center;white-space:nowrap}
+  html[data-theme="LG"] nav.tabs button svg{display:block;width:21px;height:21px;margin:0 auto}
+  html[data-theme="LG"] .content{padding-bottom:110px}
+}
+@media (max-width:900px) and (prefers-color-scheme: dark){ html[data-theme="LG"] nav.tabs{background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),inset 1px 0 0 rgba(255,255,255,.15),inset 0 -1px 0 rgba(255,255,255,.08),0 10px 34px rgba(0,0,0,.35);backdrop-filter:blur(22px) saturate(190%);-webkit-backdrop-filter:blur(22px) saturate(190%)} }
+@media (max-width:900px){ html[data-theme="LG"] nav.tabs{background:rgba(255,255,255,.74);backdrop-filter:blur(30px) saturate(200%);-webkit-backdrop-filter:blur(30px) saturate(200%)} }
+@media (max-width:900px) and (prefers-color-scheme: dark){ html[data-theme="LG"] nav.tabs{background:rgba(28,28,36,.72)} }
 </style>
 <script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"A"}catch(e){document.documentElement.dataset.theme="A"}</script>
 </head>
@@ -713,12 +761,13 @@ const THEMES = [["A", "잉크·청록", "어두운 사이드바·청록 포인�
   ["CL", "클레이 3D", "말랑한 점토 입체감·파스텔", ["#e9e5ff", "#7c5cf0", "#ffb3c6"]],
   ["LM", "리퀴드 메탈", "흑연 바탕·크롬 숫자", ["#0e0f12", "#c9ced8", "#3a3f4a"]],
   ["AN", "아날로그 노트", "종이 질감·손글씨·형광펜", ["#f6f1e4", "#ffe680", "#c2371f"]],
-  ["RI", "리소 프린트", "형광 핑크·파랑 인쇄 느낌", ["#ff48b0", "#0078bf", "#ffd600"]]];
+  ["RI", "리소 프린트", "형광 핑크·파랑 인쇄 느낌", ["#ff48b0", "#0078bf", "#ffd600"]],
+  ["LG", "리퀴드 글래스", "iOS 26 느낌 · 맑은 유리·떠 있는 탭 바", ["#7cc4ff", "#ffffff", "#ff9ad5"]]];
 /* 위젯 색: 다크 테마(리니어·글래스 벤토·리퀴드 메탈)는 어둡게, A는 기기 다크 모드를 따르고, 나머지는 밝은 화면 */
 const DARK_THEMES = ["LN", "GB", "LM"];
 /* 메뉴에서 뺀 테마(예: 애시드 라임·딥 그린)를 쓰던 브라우저는 기본 테마로 */
 if (!THEMES.some(t => t[0] === document.documentElement.dataset.theme)) document.documentElement.dataset.theme = "A";
-const isDark = () => DARK_THEMES.includes(document.documentElement.dataset.theme) || (document.documentElement.dataset.theme === "A" && matchMedia("(prefers-color-scheme: dark)").matches);
+const isDark = () => DARK_THEMES.includes(document.documentElement.dataset.theme) || (["A", "LG"].includes(document.documentElement.dataset.theme) && matchMedia("(prefers-color-scheme: dark)").matches);
 let D = null, current = "t1";
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
