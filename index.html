@@ -713,6 +713,76 @@ html[data-theme="LG"] .chip{background:rgba(255,255,255,.5);border:1px solid rgb
 @media (max-width:900px) and (prefers-color-scheme: dark){ html[data-theme="LG"] nav.tabs{background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),inset 1px 0 0 rgba(255,255,255,.15),inset 0 -1px 0 rgba(255,255,255,.08),0 10px 34px rgba(0,0,0,.35);backdrop-filter:blur(22px) saturate(190%);-webkit-backdrop-filter:blur(22px) saturate(190%)} }
 @media (max-width:900px){ html[data-theme="LG"] nav.tabs{background:rgba(255,255,255,.74);backdrop-filter:blur(30px) saturate(200%);-webkit-backdrop-filter:blur(30px) saturate(200%)} }
 @media (max-width:900px) and (prefers-color-scheme: dark){ html[data-theme="LG"] nav.tabs{background:rgba(28,28,36,.72)} }
+/* ── 뉴모피즘 3종: 배경과 같은 색의 카드를 밝은/어두운 두 그림자로 '튀어나오게', 선택된 것은 '눌린' 안쪽 그림자 ── */
+html[data-theme="NL"]{--bg:#e6e9ef;--card:#e6e9ef;--ink:#1f2430;--sub:#4a5263;--faint:#6b7385;--line:transparent;--soft:#e6e9ef;--up:#e03131;--down:#1c64f2;--flat:#4a5263;--flat-bg:#e6e9ef;--up-bg:#e6e9ef;--down-bg:#e6e9ef;
+  --accent:#2f6feb;--accent-ink:#fff;--accent-soft:#e6e9ef;--p1:#e6e9ef;--p2:#e6e9ef;--p3:#e6e9ef;--p4:#e6e9ef;--p5:#e6e9ef;--radius:22px;--shadow:8px 8px 16px #c3c8d2,-8px -8px 16px #ffffff}
+html[data-theme="NL"] body{background:#e6e9ef}
+html[data-theme="NL"] .side{background:#e6e9ef;border:0;box-shadow:6px 6px 14px #c3c8d2,-6px -6px 14px #ffffff}
+html[data-theme="NL"] .card,html[data-theme="NL"] .tile,html[data-theme="NL"] .scard,html[data-theme="NL"] .tp,html[data-theme="NL"] .note,html[data-theme="NL"] .tnote,html[data-theme="NL"] .actplan,html[data-theme="NL"] .nx-co,html[data-theme="NL"] .tabsum{background:#e6e9ef;border:0;box-shadow:8px 8px 16px #c3c8d2,-8px -8px 16px #ffffff}
+html[data-theme="NL"] .pill,html[data-theme="NL"] .subtab,html[data-theme="NL"] .aisub,html[data-theme="NL"] .chip,html[data-theme="NL"] .gbtn,html[data-theme="NL"] .meta select,html[data-theme="NL"] .rbtn{background:#e6e9ef;border:0;box-shadow:4px 4px 9px #c3c8d2,-4px -4px 9px #ffffff}
+html[data-theme="NL"] .rbtn{color:#2f6feb}
+html[data-theme="NL"] .subtab[aria-selected=true],html[data-theme="NL"] .aisub[aria-selected=true]{box-shadow:inset 3px 3px 7px #c3c8d2,inset -3px -3px 7px #ffffff;color:#2f6feb}
+html[data-theme="NL"] nav.tabs button{border-radius:14px}
+html[data-theme="NL"] nav.tabs button[aria-selected=true]{background:#e6e9ef;color:#2f6feb;box-shadow:inset 5px 5px 10px #c3c8d2,inset -5px -5px 10px #ffffff}
+html[data-theme="NL"] nav.tabs button:hover{background:#e6e9ef;box-shadow:3px 3px 7px #c3c8d2,-3px -3px 7px #ffffff}
+html[data-theme="NL"] .brand .logo{background:#e6e9ef;color:#2f6feb;box-shadow:4px 4px 9px #c3c8d2,-4px -4px 9px #ffffff}
+html[data-theme="NL"] .tabsum{color:#1f2430}
+html[data-theme="NL"] .tabsum-h,html[data-theme="NL"] .tabsum li::marker,html[data-theme="NL"] .tp.accent .tph{color:#2f6feb}
+html[data-theme="NL"] .tabsum b.hl,html[data-theme="NL"] .tp.accent b.hl{color:#2f6feb}
+html[data-theme="NL"] .focus>div{background:#e6e9ef;box-shadow:inset 3px 3px 8px #c3c8d2,inset -3px -3px 8px #ffffff}
+html[data-theme="NL"] .focus>div:nth-child(2){background:#e6e9ef;box-shadow:inset 3px 3px 8px #c3c8d2,inset -3px -3px 8px #ffffff}
+html[data-theme="NL"] .bento .b-big{box-shadow:10px 10px 22px #c3c8d2,-10px -10px 22px #ffffff}
+html[data-theme="NL"] .tt th{border-bottom:0}html[data-theme="NL"] .tt td{border-bottom:1px solid #c3c8d2}html[data-theme="NL"] .tt tr.hot td{background:transparent}
+html[data-theme="NL"] .nx-stage span{background:#e6e9ef;box-shadow:inset 2px 2px 5px #c3c8d2,inset -2px -2px 5px #ffffff}html[data-theme="NL"] .nx-stage span.on{background:#2f6feb;color:#fff;box-shadow:2px 2px 5px #c3c8d2,-2px -2px 5px #ffffff}
+html[data-theme="NL"] .nx-kv div{background:#e6e9ef;box-shadow:inset 3px 3px 7px #c3c8d2,inset -3px -3px 7px #ffffff}
+html[data-theme="NL"] .themepop{background:#e6e9ef;border:0;box-shadow:10px 10px 26px #c3c8d2,-10px -10px 26px #ffffff}
+html[data-theme="NL"] .themepop button{background:#e6e9ef;box-shadow:3px 3px 7px #c3c8d2,-3px -3px 7px #ffffff}html[data-theme="NL"] .themepop button[aria-pressed=true]{box-shadow:inset 3px 3px 7px #c3c8d2,inset -3px -3px 7px #ffffff;border-color:transparent}
+html[data-theme="ND"]{--bg:#262a33;--card:#262a33;--ink:#eef0f4;--sub:#b6bcc8;--faint:#8f96a4;--line:transparent;--soft:#262a33;--up:#ff6b6b;--down:#6ea8fe;--flat:#b6bcc8;--flat-bg:#262a33;--up-bg:#262a33;--down-bg:#262a33;
+  --accent:#3ddbb5;--accent-ink:#0f2a24;--accent-soft:#262a33;--p1:#262a33;--p2:#262a33;--p3:#262a33;--p4:#262a33;--p5:#262a33;--radius:22px;--shadow:8px 8px 16px #191c22,-8px -8px 16px #333844;color-scheme:dark}
+html[data-theme="ND"] body{background:#262a33}
+html[data-theme="ND"] .side{background:#262a33;border:0;box-shadow:6px 6px 14px #191c22,-6px -6px 14px #333844}
+html[data-theme="ND"] .card,html[data-theme="ND"] .tile,html[data-theme="ND"] .scard,html[data-theme="ND"] .tp,html[data-theme="ND"] .note,html[data-theme="ND"] .tnote,html[data-theme="ND"] .actplan,html[data-theme="ND"] .nx-co,html[data-theme="ND"] .tabsum{background:#262a33;border:0;box-shadow:8px 8px 16px #191c22,-8px -8px 16px #333844}
+html[data-theme="ND"] .pill,html[data-theme="ND"] .subtab,html[data-theme="ND"] .aisub,html[data-theme="ND"] .chip,html[data-theme="ND"] .gbtn,html[data-theme="ND"] .meta select,html[data-theme="ND"] .rbtn{background:#262a33;border:0;box-shadow:4px 4px 9px #191c22,-4px -4px 9px #333844}
+html[data-theme="ND"] .rbtn{color:#3ddbb5}
+html[data-theme="ND"] .subtab[aria-selected=true],html[data-theme="ND"] .aisub[aria-selected=true]{box-shadow:inset 3px 3px 7px #191c22,inset -3px -3px 7px #333844;color:#3ddbb5}
+html[data-theme="ND"] nav.tabs button{border-radius:14px}
+html[data-theme="ND"] nav.tabs button[aria-selected=true]{background:#262a33;color:#3ddbb5;box-shadow:inset 5px 5px 10px #191c22,inset -5px -5px 10px #333844}
+html[data-theme="ND"] nav.tabs button:hover{background:#262a33;box-shadow:3px 3px 7px #191c22,-3px -3px 7px #333844}
+html[data-theme="ND"] .brand .logo{background:#262a33;color:#3ddbb5;box-shadow:4px 4px 9px #191c22,-4px -4px 9px #333844}
+html[data-theme="ND"] .tabsum{color:#eef0f4}
+html[data-theme="ND"] .tabsum-h,html[data-theme="ND"] .tabsum li::marker,html[data-theme="ND"] .tp.accent .tph{color:#3ddbb5}
+html[data-theme="ND"] .tabsum b.hl,html[data-theme="ND"] .tp.accent b.hl{color:#3ddbb5}
+html[data-theme="ND"] .focus>div{background:#262a33;box-shadow:inset 3px 3px 8px #191c22,inset -3px -3px 8px #333844}
+html[data-theme="ND"] .focus>div:nth-child(2){background:#262a33;box-shadow:inset 3px 3px 8px #191c22,inset -3px -3px 8px #333844}
+html[data-theme="ND"] .bento .b-big{box-shadow:10px 10px 22px #191c22,-10px -10px 22px #333844}
+html[data-theme="ND"] .tt th{border-bottom:0}html[data-theme="ND"] .tt td{border-bottom:1px solid #191c22}html[data-theme="ND"] .tt tr.hot td{background:transparent}
+html[data-theme="ND"] .nx-stage span{background:#262a33;box-shadow:inset 2px 2px 5px #191c22,inset -2px -2px 5px #333844}html[data-theme="ND"] .nx-stage span.on{background:#3ddbb5;color:#0f2a24;box-shadow:2px 2px 5px #191c22,-2px -2px 5px #333844}
+html[data-theme="ND"] .nx-kv div{background:#262a33;box-shadow:inset 3px 3px 7px #191c22,inset -3px -3px 7px #333844}
+html[data-theme="ND"] .themepop{background:#262a33;border:0;box-shadow:10px 10px 26px #191c22,-10px -10px 26px #333844}
+html[data-theme="ND"] .themepop button{background:#262a33;box-shadow:3px 3px 7px #191c22,-3px -3px 7px #333844}html[data-theme="ND"] .themepop button[aria-pressed=true]{box-shadow:inset 3px 3px 7px #191c22,inset -3px -3px 7px #333844;border-color:transparent}
+html[data-theme="NS"]{--bg:#efe6dc;--card:#efe6dc;--ink:#2e2620;--sub:#5e5247;--faint:#857868;--line:transparent;--soft:#efe6dc;--up:#d9381e;--down:#2b62c9;--flat:#5e5247;--flat-bg:#efe6dc;--up-bg:#efe6dc;--down-bg:#efe6dc;
+  --accent:#e0694a;--accent-ink:#fff;--accent-soft:#efe6dc;--p1:#efe6dc;--p2:#efe6dc;--p3:#efe6dc;--p4:#efe6dc;--p5:#efe6dc;--radius:22px;--shadow:8px 8px 16px #d2c5b6,-8px -8px 16px #ffffff}
+html[data-theme="NS"] body{background:#efe6dc}
+html[data-theme="NS"] .side{background:#efe6dc;border:0;box-shadow:6px 6px 14px #d2c5b6,-6px -6px 14px #ffffff}
+html[data-theme="NS"] .card,html[data-theme="NS"] .tile,html[data-theme="NS"] .scard,html[data-theme="NS"] .tp,html[data-theme="NS"] .note,html[data-theme="NS"] .tnote,html[data-theme="NS"] .actplan,html[data-theme="NS"] .nx-co,html[data-theme="NS"] .tabsum{background:#efe6dc;border:0;box-shadow:8px 8px 16px #d2c5b6,-8px -8px 16px #ffffff}
+html[data-theme="NS"] .pill,html[data-theme="NS"] .subtab,html[data-theme="NS"] .aisub,html[data-theme="NS"] .chip,html[data-theme="NS"] .gbtn,html[data-theme="NS"] .meta select,html[data-theme="NS"] .rbtn{background:#efe6dc;border:0;box-shadow:4px 4px 9px #d2c5b6,-4px -4px 9px #ffffff}
+html[data-theme="NS"] .rbtn{color:#e0694a}
+html[data-theme="NS"] .subtab[aria-selected=true],html[data-theme="NS"] .aisub[aria-selected=true]{box-shadow:inset 3px 3px 7px #d2c5b6,inset -3px -3px 7px #ffffff;color:#e0694a}
+html[data-theme="NS"] nav.tabs button{border-radius:14px}
+html[data-theme="NS"] nav.tabs button[aria-selected=true]{background:#efe6dc;color:#e0694a;box-shadow:inset 5px 5px 10px #d2c5b6,inset -5px -5px 10px #ffffff}
+html[data-theme="NS"] nav.tabs button:hover{background:#efe6dc;box-shadow:3px 3px 7px #d2c5b6,-3px -3px 7px #ffffff}
+html[data-theme="NS"] .brand .logo{background:#efe6dc;color:#e0694a;box-shadow:4px 4px 9px #d2c5b6,-4px -4px 9px #ffffff}
+html[data-theme="NS"] .tabsum{color:#2e2620}
+html[data-theme="NS"] .tabsum-h,html[data-theme="NS"] .tabsum li::marker,html[data-theme="NS"] .tp.accent .tph{color:#e0694a}
+html[data-theme="NS"] .tabsum b.hl,html[data-theme="NS"] .tp.accent b.hl{color:#e0694a}
+html[data-theme="NS"] .focus>div{background:#efe6dc;box-shadow:inset 3px 3px 8px #d2c5b6,inset -3px -3px 8px #ffffff}
+html[data-theme="NS"] .focus>div:nth-child(2){background:#efe6dc;box-shadow:inset 3px 3px 8px #d2c5b6,inset -3px -3px 8px #ffffff}
+html[data-theme="NS"] .bento .b-big{box-shadow:10px 10px 22px #d2c5b6,-10px -10px 22px #ffffff}
+html[data-theme="NS"] .tt th{border-bottom:0}html[data-theme="NS"] .tt td{border-bottom:1px solid #d2c5b6}html[data-theme="NS"] .tt tr.hot td{background:transparent}
+html[data-theme="NS"] .nx-stage span{background:#efe6dc;box-shadow:inset 2px 2px 5px #d2c5b6,inset -2px -2px 5px #ffffff}html[data-theme="NS"] .nx-stage span.on{background:#e0694a;color:#fff;box-shadow:2px 2px 5px #d2c5b6,-2px -2px 5px #ffffff}
+html[data-theme="NS"] .nx-kv div{background:#efe6dc;box-shadow:inset 3px 3px 7px #d2c5b6,inset -3px -3px 7px #ffffff}
+html[data-theme="NS"] .themepop{background:#efe6dc;border:0;box-shadow:10px 10px 26px #d2c5b6,-10px -10px 26px #ffffff}
+html[data-theme="NS"] .themepop button{background:#efe6dc;box-shadow:3px 3px 7px #d2c5b6,-3px -3px 7px #ffffff}html[data-theme="NS"] .themepop button[aria-pressed=true]{box-shadow:inset 3px 3px 7px #d2c5b6,inset -3px -3px 7px #ffffff;border-color:transparent}
 </style>
 <script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"A"}catch(e){document.documentElement.dataset.theme="A"}</script>
 </head>
@@ -762,9 +832,12 @@ const THEMES = [["A", "잉크·청록", "어두운 사이드바·청록 포인�
   ["LM", "리퀴드 메탈", "흑연 바탕·크롬 숫자", ["#0e0f12", "#c9ced8", "#3a3f4a"]],
   ["AN", "아날로그 노트", "종이 질감·손글씨·형광펜", ["#f6f1e4", "#ffe680", "#c2371f"]],
   ["RI", "리소 프린트", "형광 핑크·파랑 인쇄 느낌", ["#ff48b0", "#0078bf", "#ffd600"]],
-  ["LG", "리퀴드 글래스", "iOS 26 느낌 · 맑은 유리·떠 있는 탭 바", ["#7cc4ff", "#ffffff", "#ff9ad5"]]];
+  ["LG", "리퀴드 글래스", "iOS 26 느낌 · 맑은 유리·떠 있는 탭 바", ["#7cc4ff", "#ffffff", "#ff9ad5"]],
+  ["NL", "뉴모피즘 라이트", "밝은 회색·튀어나온 카드·눌린 버튼", ["#e6e9ef", "#ffffff", "#2f6feb"]],
+  ["ND", "뉴모피즘 다크", "어두운 회색·부드러운 입체·민트 포인트", ["#262a33", "#333844", "#3ddbb5"]],
+  ["NS", "뉴모피즘 샌드", "따뜻한 모래색·코랄 포인트", ["#efe6dc", "#ffffff", "#e0694a"]]];
 /* 위젯 색: 다크 테마(리니어·글래스 벤토·리퀴드 메탈)는 어둡게, A는 기기 다크 모드를 따르고, 나머지는 밝은 화면 */
-const DARK_THEMES = ["LN", "GB", "LM"];
+const DARK_THEMES = ["LN", "GB", "LM", "ND"];
 /* 메뉴에서 뺀 테마(예: 애시드 라임·딥 그린)를 쓰던 브라우저는 기본 테마로 */
 if (!THEMES.some(t => t[0] === document.documentElement.dataset.theme)) document.documentElement.dataset.theme = "A";
 const isDark = () => DARK_THEMES.includes(document.documentElement.dataset.theme) || (["A", "LG"].includes(document.documentElement.dataset.theme) && matchMedia("(prefers-color-scheme: dark)").matches);
