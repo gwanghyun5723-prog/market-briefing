@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>증시 아침 브리핑</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&family=Oswald:wght@500;600&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* 디자인: 토스증권(여백·글꼴·빨강/파랑·지표 타일) + Fox Stocks(왼쪽 사이드바·라벤더 강조·파스텔 카드) */
@@ -650,6 +650,27 @@ html[data-theme="LG"] .chip{background:rgba(255,255,255,.5);border:1px solid rgb
 @media (max-width:900px){ html[data-theme="LG"] nav.tabs{background:rgba(255,255,255,.74);backdrop-filter:blur(30px) saturate(200%);-webkit-backdrop-filter:blur(30px) saturate(200%)} }
 @media (max-width:900px) and (prefers-color-scheme: dark){ html[data-theme="LG"] nav.tabs{background:rgba(28,28,36,.72)} }
 /* ── 뉴모피즘: 배경과 같은 색의 카드를 밝은/어두운 두 그림자로 '튀어나오게', 선택된 것은 '눌린' 안쪽 그림자 (scripts/_neu_gen.py가 생성) ── */
+html[data-theme="NM"]{--bg:#eaeaec;--card:#eaeaec;--ink:#1f1f33;--sub:#4a4a5c;--faint:#707082;--line:transparent;--soft:#eaeaec;--up:#e2463f;--down:#2f6fe0;--flat:#4a4a5c;--flat-bg:#eaeaec;--up-bg:#eaeaec;--down-bg:#eaeaec;--accent:#e2463f;--accent-ink:#fff;--accent-soft:#eaeaec;--p1:#eaeaec;--p2:#eaeaec;--p3:#eaeaec;--p4:#eaeaec;--p5:#eaeaec;--radius:24px;--shadow:10px 10px 22px #c3c3c9,-10px -10px 22px #ffffff}
+html[data-theme="NM"] body{background:#eaeaec}
+html[data-theme="NM"] .side{background:#eaeaec;border:0;box-shadow:8px 8px 18px #c3c3c9,-8px -8px 18px #ffffff}
+html[data-theme="NM"] .card,html[data-theme="NM"] .tile,html[data-theme="NM"] .scard,html[data-theme="NM"] .tp,html[data-theme="NM"] .note,html[data-theme="NM"] .tnote,html[data-theme="NM"] .actplan,html[data-theme="NM"] .nx-co,html[data-theme="NM"] .tabsum{background:linear-gradient(145deg,color-mix(in srgb,#eaeaec 92%,#ffffff),color-mix(in srgb,#eaeaec 94%,#c3c3c9));border:0;box-shadow:10px 10px 22px #c3c3c9,-10px -10px 22px #ffffff}
+html[data-theme="NM"] .pill,html[data-theme="NM"] .subtab,html[data-theme="NM"] .aisub,html[data-theme="NM"] .chip,html[data-theme="NM"] .gbtn,html[data-theme="NM"] .meta select,html[data-theme="NM"] .rbtn{background:#eaeaec;border:0;box-shadow:5px 5px 11px #c3c3c9,-5px -5px 11px #ffffff}
+html[data-theme="NM"] .rbtn{color:#e2463f;font-weight:800}
+html[data-theme="NM"] .rbtn:active,html[data-theme="NM"] .gbtn:active{box-shadow:inset 4px 4px 8px #c3c3c9,inset -4px -4px 8px #ffffff}
+html[data-theme="NM"] .subtab[aria-selected=true],html[data-theme="NM"] .aisub[aria-selected=true]{box-shadow:inset 4px 4px 8px #c3c3c9,inset -4px -4px 8px #ffffff;color:#e2463f}
+html[data-theme="NM"] nav.tabs button{border-radius:16px}
+html[data-theme="NM"] nav.tabs button[aria-selected=true],html[data-theme="NM"] nav.tabs button[aria-selected=true]:hover{background:#eaeaec;color:#e2463f;box-shadow:inset 6px 6px 12px #c3c3c9,inset -6px -6px 12px #ffffff}
+html[data-theme="NM"] nav.tabs button:hover{background:#eaeaec;box-shadow:4px 4px 9px #c3c3c9,-4px -4px 9px #ffffff}
+html[data-theme="NM"] .brand .logo{background:#eaeaec;color:#e2463f;box-shadow:5px 5px 11px #c3c3c9,-5px -5px 11px #ffffff}
+html[data-theme="NM"] .tabsum{color:#1f1f33}
+html[data-theme="NM"] .tabsum-h,html[data-theme="NM"] .tabsum li::marker,html[data-theme="NM"] .tp.accent .tph,html[data-theme="NM"] .tabsum b.hl,html[data-theme="NM"] .tp.accent b.hl{color:#e2463f}
+html[data-theme="NM"] .focus>div,html[data-theme="NM"] .focus>div:nth-child(2){background:#eaeaec;box-shadow:inset 5px 5px 11px #c3c3c9,inset -5px -5px 11px #ffffff}
+html[data-theme="NM"] .bento .b-big{box-shadow:14px 14px 30px #c3c3c9,-14px -14px 30px #ffffff}
+html[data-theme="NM"] .tt th{border-bottom:0}html[data-theme="NM"] .tt td{border-bottom:1px solid #c3c3c9}html[data-theme="NM"] .tt tr.hot td{background:transparent}
+html[data-theme="NM"] .nx-stage span{background:#eaeaec;box-shadow:inset 3px 3px 6px #c3c3c9,inset -3px -3px 6px #ffffff}html[data-theme="NM"] .nx-stage span.on{background:#e2463f;color:#fff;box-shadow:3px 3px 7px #c3c3c9,-3px -3px 7px #ffffff}
+html[data-theme="NM"] .nx-kv div{background:#eaeaec;box-shadow:inset 4px 4px 9px #c3c3c9,inset -4px -4px 9px #ffffff}
+html[data-theme="NM"] .themepop{background:#eaeaec;border:0;box-shadow:12px 12px 30px #c3c3c9,-12px -12px 30px #ffffff}
+html[data-theme="NM"] .themepop button{background:#eaeaec;box-shadow:4px 4px 9px #c3c3c9,-4px -4px 9px #ffffff}html[data-theme="NM"] .themepop button[aria-pressed=true]{box-shadow:inset 4px 4px 9px #c3c3c9,inset -4px -4px 9px #ffffff;border-color:transparent}
 html[data-theme="NR"]{--bg:#ececee;--card:#ececee;--ink:#26262b;--sub:#55555d;--faint:#76767f;--line:transparent;--soft:#ececee;--up:#e5383b;--down:#2f6fe0;--flat:#55555d;--flat-bg:#ececee;--up-bg:#ececee;--down-bg:#ececee;--accent:#f0643f;--accent-ink:#fff;--accent-soft:#ececee;--p1:#ececee;--p2:#ececee;--p3:#ececee;--p4:#ececee;--p5:#ececee;--radius:24px;--shadow:10px 10px 22px #c4c4ca,-10px -10px 22px #ffffff}
 html[data-theme="NR"] body{background:#ececee}
 html[data-theme="NR"] .side{background:#ececee;border:0;box-shadow:8px 8px 18px #c4c4ca,-8px -8px 18px #ffffff}
@@ -795,6 +816,71 @@ html[data-theme="NR"] button.sbtn{border:0;background:#ececee;box-shadow:3px 3px
 @media (max-width:900px){ nav.tabs button{white-space:normal;word-break:keep-all;line-height:1.15;font-size:10.5px;letter-spacing:-.02em} }
 @media (max-width:900px){ html[data-theme] nav.tabs button{white-space:normal;word-break:keep-all;line-height:1.15;font-size:10.5px;letter-spacing:-.02em} }
 html[data-theme] .gbtn{width:auto;height:34px;display:inline-flex;align-items:center;gap:5px;padding:0 13px 0 10px;border-radius:999px;font:inherit;font-size:13px;font-weight:700}
+/* ── 뉴모피즘 미드나잇: 라이트 그레이 입체 + 짙은 네이비 버튼 + 레드·오렌지 그라데이션 ── */
+html[data-theme="NM"] nav.tabs button[aria-selected=true],html[data-theme="NM"] nav.tabs button[aria-selected=true]:hover{background:#1f1f33;color:#fff;box-shadow:5px 5px 12px #c3c3c9,-5px -5px 12px #fff}
+html[data-theme="NM"] nav.tabs button[aria-selected=true] svg{color:#ff6b5f}
+html[data-theme="NM"] .brand .logo{background:#1f1f33;color:#ff6b5f}
+html[data-theme="NM"] .rbtn{background:#e2463f;color:#fff;box-shadow:5px 5px 12px #c3c3c9,-5px -5px 12px #fff}
+html[data-theme="NM"] .gbtn{background:#1f1f33;color:#fff}
+html[data-theme="NM"] .bento .b-big{background:#1f1f33;color:#fff;box-shadow:12px 12px 26px #b9b9c2,-10px -10px 24px #fff}
+html[data-theme="NM"] .bento .b-big .tile-n,html[data-theme="NM"] .bento .b-big .src,html[data-theme="NM"] .bento .b-big .tile-note,html[data-theme="NM"] .bento .b-big a{color:rgba(255,255,255,.78)!important}
+html[data-theme="NM"] .bento .b-big .tile-c.up{color:#ff8a80}html[data-theme="NM"] .bento .b-big .tile-c.down{color:#8cb8ff}
+html[data-theme="NM"] .tabsum{box-shadow:inset 0 3px 0 #e2463f,10px 10px 22px #c3c3c9,-10px -10px 22px #fff}
+html[data-theme="NM"] .nx-stage span.on{background:linear-gradient(90deg,#e2463f,#f0a043);color:#fff}
+html[data-theme="NM"] .nx-bar{background:linear-gradient(90deg,#e2463f,#f0a043)}
+html[data-theme="NM"] .nx-tab[aria-selected=true]{background:#1f1f33;color:#fff}
+html[data-theme="NM"] .subtab[aria-selected=true],html[data-theme="NM"] .aisub[aria-selected=true]{background:#1f1f33;color:#fff;box-shadow:none}
+html[data-theme="NM"] .focus>div:nth-child(2){background:#1f1f33;color:#fff;box-shadow:none}html[data-theme="NM"] .focus>div:nth-child(2) *{color:#fff!important}
+html[data-theme="NM"] button.sbtn{background:#eaeaec}
+/* ── 샴페인 골드: 차콜 바탕 위 크림·골드 그라데이션 카드, 페리윙클 블루 포인트 ── */
+html[data-theme="GD"]{--bg:#393939;--card:#fbf6e8;--ink:#2e2a22;--sub:#5c5547;--faint:#7d7564;--line:#d8c89a;--soft:#f1e8cf;--up:#d23f3f;--up-bg:#f8dcd6;--down:#4e6fe0;--down-bg:#dde4fb;--flat:#5c5547;--flat-bg:#efe6cc;--accent:#5f7ff0;--accent-ink:#fff;--accent-soft:#e3e8fd;--p1:#fbf6e8;--p2:#fbf6e8;--p3:#fbf6e8;--p4:#fbf6e8;--p5:#fbf6e8;--radius:14px;--shadow:0 6px 16px rgba(0,0,0,.35)}
+html[data-theme="GD"] body{background:#393939}
+html[data-theme="GD"] header.top h1,html[data-theme="GD"] > body h2,html[data-theme="GD"] .nx-grp,html[data-theme="GD"] .nx-gl,html[data-theme="GD"] #foot,html[data-theme="GD"] #foot .muted,html[data-theme="GD"] #foot .small{color:#f3ecd8}
+html[data-theme="GD"] .content>section>h2,html[data-theme="GD"] .tab>h2{color:#f3ecd8}
+html[data-theme="GD"] header.top h1,html[data-theme="GD"] h2,html[data-theme="GD"] .tile-v,html[data-theme="GD"] .nx-grp{font-family:"Oswald","Pretendard Variable",sans-serif;letter-spacing:.01em}
+html[data-theme="GD"] .hello{color:#cfc6ae}
+html[data-theme="GD"] #foot a{color:#e8dcb8}html[data-theme="GD"] .clickhint,html[data-theme="GD"] .clickhint b{color:#e8dcb8}
+html[data-theme="GD"] .side{background:#2e2e2e;border-right:1px solid #4a4a4a}
+html[data-theme="GD"] .brand{color:#f3ecd8}html[data-theme="GD"] .side-meta,html[data-theme="GD"] .side-meta b{color:#cfc6ae}
+html[data-theme="GD"] nav.tabs button{color:#d8cfb6}
+html[data-theme="GD"] nav.tabs button:hover{background:#444;color:#fff}
+html[data-theme="GD"] nav.tabs button[aria-selected=true]{background:linear-gradient(135deg,#fffdf6 0%,#f3ead0 60%,#e6d6a8 100%);color:#4e6fe0;box-shadow:inset 0 0 0 1.5px #d8c89a}
+html[data-theme="GD"] .brand .logo{background:linear-gradient(135deg,#9db1ff,#5f7ff0);color:#fff}
+html[data-theme="GD"] .card,html[data-theme="GD"] .tile,html[data-theme="GD"] .scard,html[data-theme="GD"] .tp,html[data-theme="GD"] .note,html[data-theme="GD"] .tnote,html[data-theme="GD"] .actplan,html[data-theme="GD"] .nx-co,html[data-theme="GD"] .subtab,html[data-theme="GD"] .aisub,html[data-theme="GD"] .tabsum,html[data-theme="GD"] .pill,html[data-theme="GD"] .themepop{background:linear-gradient(135deg,#fffdf6 0%,#f3ead0 60%,#e6d6a8 100%);border:1.5px solid #d8c89a;color:#2e2a22;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+html[data-theme="GD"] .tabsum-h,html[data-theme="GD"] .tabsum li::marker,html[data-theme="GD"] .tp.accent .tph,html[data-theme="GD"] .tabsum b.hl{color:#4e6fe0}
+html[data-theme="GD"] .rbtn{background:linear-gradient(135deg,#9db1ff,#5f7ff0);color:#fff;border:0;box-shadow:0 4px 12px rgba(95,127,240,.45)}
+html[data-theme="GD"] .gbtn{background:linear-gradient(135deg,#fffdf6 0%,#f3ead0 60%,#e6d6a8 100%);color:#2e2a22;border:1.5px solid #d8c89a}
+html[data-theme="GD"] .meta select{background:#fbf6e8;color:#2e2a22;border:1.5px solid #d8c89a}
+html[data-theme="GD"] .nx-stage span.on{background:linear-gradient(135deg,#9db1ff,#5f7ff0);color:#fff}html[data-theme="GD"] .nx-bar{background:linear-gradient(135deg,#9db1ff,#5f7ff0)}
+html[data-theme="GD"] .nx-tab[aria-selected=true],html[data-theme="GD"] .subtab[aria-selected=true],html[data-theme="GD"] .aisub[aria-selected=true]{background:linear-gradient(135deg,#9db1ff,#5f7ff0);color:#fff;border-color:transparent}
+html[data-theme="GD"] .nx-tab{background:#fbf6e8}
+html[data-theme="GD"] .focus>div:nth-child(2){background:#e3e8fd}
+html[data-theme="GD"] button.sbtn{background:#fffaf0;border:1px solid #d8c89a}
+html[data-theme="GD"] .actplan{border-left:3px solid #5f7ff0}
+html[data-theme="GD"] .nx-pick{background:#393939}
+/* ── 파스텔 그라데이션: 민트 그레이 바탕·반투명 민트 카드, 블루·코랄·퍼플 그라데이션 포인트 ── */
+html[data-theme="PG"]{--bg:#eef4f4;--card:rgba(220,235,235,.75);--ink:#24303a;--sub:#4d5d68;--faint:#71818b;--line:rgba(120,160,165,.25);--soft:#dceaea;--up:#d9485f;--up-bg:#fbe1e5;--down:#3d64b8;--down-bg:#dfe8f6;--flat:#4d5d68;--flat-bg:#dceaea;--accent:#5574ad;--accent-ink:#fff;--accent-soft:#dde7f3;--p1:rgba(220,235,235,.75);--p2:rgba(220,235,235,.75);--p3:rgba(220,235,235,.75);--p4:rgba(220,235,235,.75);--p5:rgba(220,235,235,.75);--radius:14px;--shadow:0 4px 14px rgba(60,100,110,.08)}
+html[data-theme="PG"] body{background:linear-gradient(180deg,#f3f8f8,#e7f0f1);background-attachment:fixed}
+html[data-theme="PG"] .side{background:#e3eeee;border-right:1px solid var(--line)}
+html[data-theme="PG"] .card,html[data-theme="PG"] .tile,html[data-theme="PG"] .scard,html[data-theme="PG"] .tp,html[data-theme="PG"] .note,html[data-theme="PG"] .tnote,html[data-theme="PG"] .actplan,html[data-theme="PG"] .nx-co,html[data-theme="PG"] .subtab,html[data-theme="PG"] .aisub,html[data-theme="PG"] .pill{border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 4px 14px rgba(60,100,110,.08)}
+html[data-theme="PG"] nav.tabs button[aria-selected=true]{background:linear-gradient(135deg,#5574ad,#9cbbd9);color:#fff}
+html[data-theme="PG"] nav.tabs button[aria-selected=true] svg{color:#fff}
+html[data-theme="PG"] .brand .logo{background:linear-gradient(135deg,#9467b5,#c9a2d6);color:#fff}
+html[data-theme="PG"] .rbtn{background:linear-gradient(135deg,#e0607a,#f2a37a);color:#fff;border:0}
+html[data-theme="PG"] .gbtn{background:#dceaea}
+html[data-theme="PG"] .tabsum,html[data-theme="PG"] .tp.accent{background:rgba(220,235,235,.9);color:#24303a;border:0;box-shadow:inset 4px 0 0 #9467b5,0 4px 14px rgba(60,100,110,.08)}
+html[data-theme="PG"] .tabsum-h,html[data-theme="PG"] .tabsum li::marker,html[data-theme="PG"] .tp.accent .tph,html[data-theme="PG"] .tabsum b.hl{color:#7b4fa3}
+html[data-theme="PG"] .bento .b-big{background:linear-gradient(135deg,#5574ad,#9cbbd9);color:#fff;border:0}
+html[data-theme="PG"] .bento .b-big .tile-n,html[data-theme="PG"] .bento .b-big .src,html[data-theme="PG"] .bento .b-big .tile-note,html[data-theme="PG"] .bento .b-big a{color:rgba(255,255,255,.88)!important}
+html[data-theme="PG"] .bento .b-big .tile-c{display:inline-block;align-self:flex-start;background:#fff;border-radius:999px;padding:2px 10px}
+html[data-theme="PG"] .nx-stage span.on{background:linear-gradient(135deg,#9467b5,#c9a2d6);color:#fff}html[data-theme="PG"] .nx-bar{background:linear-gradient(135deg,#e0607a,#f2a37a)}
+html[data-theme="PG"] .nx-tab[aria-selected=true]{background:linear-gradient(135deg,#9467b5,#c9a2d6);color:#fff;border-color:transparent}
+html[data-theme="PG"] .subtab[aria-selected=true]{background:linear-gradient(135deg,#e0607a,#f2a37a);color:#fff}html[data-theme="PG"] .aisub[aria-selected=true]{background:linear-gradient(135deg,#5574ad,#9cbbd9);color:#fff}
+html[data-theme="PG"] .focus>div:nth-child(1){box-shadow:inset 0 3px 0 #e0607a}html[data-theme="PG"] .focus>div:nth-child(2){box-shadow:inset 0 3px 0 #5574ad}html[data-theme="PG"] .focus>div:nth-child(3){box-shadow:inset 0 3px 0 #9467b5}
+html[data-theme="PG"] .actplan{border-left:3px solid #9467b5}
+html[data-theme="PG"] button.sbtn{background:#f4f9f9}
+html[data-theme="NM"] .pill,html[data-theme="NM"] span.chip{box-shadow:inset 2px 2px 5px #c3c3c9,inset -2px -2px 5px #fff}
+html[data-theme="GD"] .side-meta .clickhint .demo.off{background:#4a4a4a;color:#e8dcb8}
 </style>
 <script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"NR"}catch(e){document.documentElement.dataset.theme="NR"}</script>
 </head>
@@ -832,6 +918,9 @@ const TAB_ICONS = {
 const SPARK = svg('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>');
 const CH_COLORS = ["#6b5cff", "#f04452", "#12b886", "#f59f00", "#3182f6", "#e64980"];
 const THEMES = [["NR", "뉴모피즘 레인보우", "기본 · 소프트 화이트·무지개 링·컬러 점", ["#ececee", "#ff6b5b", "#69db7c"]],
+  ["NM", "뉴모피즘 미드나잇", "라이트 그레이·네이비 버튼·레드 포인트", ["#eaeaec", "#1f1f33", "#e2463f"]],
+  ["GD", "샴페인 골드", "차콜 바탕·크림 골드 카드·블루 포인트", ["#393939", "#efe2bc", "#6f8ff5"]],
+  ["PG", "파스텔 그라데이션", "민트 그레이·블루·코랄·퍼플 그라데이션", ["#dceaea", "#e0607a", "#9467b5"]],
   ["A", "잉크·청록", "어두운 사이드바·청록 포인트", ["#0f1419", "#0d9488", "#f4f5f7"]],
   ["D", "네이비·골드", "프라이빗뱅킹 리포트", ["#14213d", "#b8892d", "#f7f5f0"]],
   ["E", "오로라 글래스", "그라데이션·반투명 카드", ["#7c3aed", "#2563eb", "#ffe3f1"]],
