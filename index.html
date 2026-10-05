@@ -980,7 +980,7 @@ html[data-theme="PG"] button.sbtn{background:#f4f9f9}
 html[data-theme="NM"] .pill,html[data-theme="NM"] span.chip{box-shadow:inset 2px 2px 5px #c3c3c9,inset -2px -2px 5px #fff}
 html[data-theme="GD"] .side-meta .clickhint .demo.off{background:#4a4a4a;color:#e8dcb8}
 </style>
-<script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"NR"}catch(e){document.documentElement.dataset.theme="NR"}</script>
+<script>/* 테마를 그리기 전에 먼저 적용(깜빡임 방지) */try{document.documentElement.dataset.theme=localStorage.getItem("mb-theme")||"MT"}catch(e){document.documentElement.dataset.theme="MT"}</script>
 </head>
 <body>
 <div class="app">
@@ -1015,11 +1015,11 @@ const TAB_ICONS = {
 };
 const SPARK = svg('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>');
 const CH_COLORS = ["#6b5cff", "#f04452", "#12b886", "#f59f00", "#3182f6", "#e64980"];
-const THEMES = [["NR", "뉴모피즘 레인보우", "기본 · 소프트 화이트·무지개 링·컬러 점", ["#ececee", "#ff6b5b", "#69db7c"]],
+const THEMES = [["MT", "뉴모피즘 민트 글로우", "기본 · 페일 블루 바탕·민트-틸 그라데이션", ["#eef2f7", "#3fb8a0", "#8de8c0"]],
+  ["NR", "뉴모피즘 레인보우", "소프트 화이트·무지개 링·컬러 점", ["#ececee", "#ff6b5b", "#69db7c"]],
   ["NM", "뉴모피즘 미드나잇", "라이트 그레이·네이비 버튼·레드 포인트", ["#eaeaec", "#1f1f33", "#e2463f"]],
   ["NL", "뉴모피즘 라벤더", "라벤더 바탕·인디고 포인트", ["#e7e9f6", "#6f73d8", "#9a9ee8"]],
   ["SG", "뉴모피즘 선셋 글로우", "쿨 그레이 바탕·코랄-오렌지 그라데이션", ["#e9edf5", "#f2577a", "#ff9a5a"]],
-  ["MT", "뉴모피즘 민트 글로우", "페일 블루 바탕·민트-틸 그라데이션", ["#eef2f7", "#3fb8a0", "#8de8c0"]],
   ["GD", "샴페인 골드", "차콜 바탕·크림 골드 카드·블루 포인트", ["#393939", "#efe2bc", "#6f8ff5"]],
   ["PG", "파스텔 그라데이션", "민트 그레이·블루·코랄·퍼플 그라데이션", ["#dceaea", "#e0607a", "#9467b5"]],
   ["A", "잉크·청록", "어두운 사이드바·청록 포인트", ["#0f1419", "#0d9488", "#f4f5f7"]],
@@ -1034,8 +1034,8 @@ const THEMES = [["NR", "뉴모피즘 레인보우", "기본 · 소프트 화이�
   ["LG", "리퀴드 글래스", "iOS 26 느낌 · 맑은 유리·떠 있는 탭 바", ["#7cc4ff", "#ffffff", "#ff9ad5"]]];
 /* 위젯 색: 다크 테마(글래스 벤토)는 어둡게, A는 기기 다크 모드를 따르고, 나머지는 밝은 화면 */
 const DARK_THEMES = ["GB"];
-/* 메뉴에서 뺀 테마를 쓰던 브라우저는 기본 테마(뉴모피즘 레인보우)로 */
-if (!THEMES.some(t => t[0] === document.documentElement.dataset.theme)) document.documentElement.dataset.theme = "NR";
+/* 메뉴에서 뺀 테마를 쓰던 브라우저는 기본 테마(뉴모피즘 민트 글로우)로 */
+if (!THEMES.some(t => t[0] === document.documentElement.dataset.theme)) document.documentElement.dataset.theme = "MT";
 const isDark = () => DARK_THEMES.includes(document.documentElement.dataset.theme) || (["A", "LG"].includes(document.documentElement.dataset.theme) && matchMedia("(prefers-color-scheme: dark)").matches);
 let D = null, current = "t1";
 
