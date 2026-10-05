@@ -503,23 +503,7 @@ html[data-theme="E"] .tp.accent b.hl{color:#fde68a}
 .bento .tile-v{white-space:normal;overflow-wrap:anywhere}
 .b-more{float:right;border:0;background:none;color:var(--accent);font:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:0}
 @media (max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.bento .tile{padding:14px}.bento .tile-v{font-size:17px}.bento .b-big .tile-v{font-size:36px}.bento .b-big .tile-ch{height:110px}.bento .b-sum{grid-row:auto}}
-/* ── 트렌드 테마 6종: 리니어 다크·핀테크 클린·애시드 라임·웜 뉴트럴·메시 그라데이션·딥 그린 ── */
-html[data-theme="LN"]{--bg:#08090a;--card:#0f1012;--ink:#f7f8f8;--sub:#8a8f98;--faint:#62666d;--line:rgba(255,255,255,.08);--soft:#16171a;--up:#ff6369;--up-bg:rgba(255,99,105,.12);--down:#5b9bff;--down-bg:rgba(91,155,255,.12);--flat:#8a8f98;--flat-bg:#16171a;--accent:#7c84e8;--accent-ink:#08090a;--accent-soft:rgba(124,132,232,.14);--warn:#fbbf24;--warn-bg:rgba(251,191,36,.12);--p1:#0f1012;--p2:#0f1012;--p3:#0f1012;--p4:#0f1012;--p5:#0f1012;--radius:12px;--shadow:none}
-html[data-theme="LN"] body{background:radial-gradient(900px 380px at 30% -120px,rgba(94,106,210,.28),transparent 70%),#08090a;font-feature-settings:'tnum'}
-html[data-theme="LN"] .side{background:rgba(255,255,255,.02);border-right:1px solid var(--line)}
-html[data-theme="LN"] nav.tabs button[aria-selected=true]{background:rgba(255,255,255,.08);color:#f7f8f8}
-html[data-theme="LN"] .brand .logo{background:var(--accent);color:var(--accent-ink)}
-html[data-theme="LN"] .card,html[data-theme="LN"] .tile,html[data-theme="LN"] .scard,html[data-theme="LN"] .tp,html[data-theme="LN"] .note,html[data-theme="LN"] .tnote,html[data-theme="LN"] .actplan,html[data-theme="LN"] .subtab,html[data-theme="LN"] .aisub,html[data-theme="LN"] .pill{border:1px solid var(--line)}
-html[data-theme="LN"] .tabsum,html[data-theme="LN"] .tp.accent{background:rgba(255,255,255,.035);color:#f7f8f8;border:1px solid var(--line)}
-html[data-theme="LN"] .tabsum-h,html[data-theme="LN"] .tp.accent .tph,html[data-theme="LN"] .tabsum li::marker,html[data-theme="LN"] .tp.accent .ttop li::marker{color:#9ea6ff}
-html[data-theme="LN"] .tabsum b.hl,html[data-theme="LN"] .tp.accent b.hl{color:#c7cbff}
-html[data-theme="LN"] .tabsum b.up,html[data-theme="LN"] .tp.accent b.up{color:#ff8a8f}
-html[data-theme="LN"] .tabsum b.down,html[data-theme="LN"] .tp.accent b.down{color:#8cbcff}
-html[data-theme="LN"] .tabsum .k,html[data-theme="LN"] .tp.accent .tsub,html[data-theme="LN"] .tp.accent .tsrc{color:inherit;opacity:.85}
-html[data-theme="LN"] .actplan{border-left:3px solid var(--accent)}
-html[data-theme="LN"] .rbtn{background:var(--accent);color:var(--accent-ink)}
-html[data-theme="LN"] header.top h1,html[data-theme="LN"] .tile-v{letter-spacing:-.035em}
-html[data-theme="LN"]{color-scheme:dark}
+/* ── 트렌드 테마: 핀테크 클린·웜 뉴트럴·메시 그라데이션 ── */
 html[data-theme="FC"]{--bg:#f2f4f6;--card:#ffffff;--ink:#191f28;--sub:#6b7684;--faint:#8b95a1;--line:#eef0f3;--soft:#f2f4f6;--up:#f04452;--up-bg:#fdeced;--down:#3182f6;--down-bg:#e8f3ff;--flat:#6b7684;--flat-bg:#f2f4f6;--accent:#3182f6;--accent-ink:#fff;--accent-soft:#e8f3ff;--warn:#b45309;--warn-bg:#fff6e5;--p1:#fff;--p2:#fff;--p3:#fff;--p4:#fff;--p5:#fff;--radius:20px;--shadow:0 1px 2px rgba(0,0,0,.03)}
 html[data-theme="FC"] body{background:#f2f4f6;font-feature-settings:'tnum'}
 html[data-theme="FC"] .side{background:#ffffff;border-right:1px solid var(--line)}
@@ -1002,7 +986,6 @@ const THEMES = [["NR", "뉴모피즘 레인보우", "기본 · 소프트 화이�
   ["A", "잉크·청록", "어두운 사이드바·청록 포인트", ["#0f1419", "#0d9488", "#f4f5f7"]],
   ["D", "네이비·골드", "프라이빗뱅킹 리포트", ["#14213d", "#b8892d", "#f7f5f0"]],
   ["E", "오로라 글래스", "그라데이션·반투명 카드", ["#7c3aed", "#2563eb", "#ffe3f1"]],
-  ["LN", "리니어 다크", "검정 바탕·은은한 보랏빛", ["#08090a", "#7c84e8", "#1c1d22"]],
   ["FC", "핀테크 클린", "큰 숫자·넉넉한 여백·파란 포인트", ["#ffffff", "#3182f6", "#f2f4f6"]],
   ["WN", "웜 뉴트럴", "미색 바탕·테라코타 포인트", ["#f4f1ea", "#c96442", "#1f1e1d"]],
   ["MG", "메시 그라데이션", "흰 바탕 위 색 번짐·부드러운 그림자", ["#ff7ab6", "#635bff", "#ffb84d"]],
@@ -1010,8 +993,8 @@ const THEMES = [["NR", "뉴모피즘 레인보우", "기본 · 소프트 화이�
   ["CL", "클레이 3D", "말랑한 점토 입체감·파스텔", ["#e9e5ff", "#7c5cf0", "#ffb3c6"]],
   ["AN", "아날로그 노트", "종이 질감·손글씨·형광펜", ["#f6f1e4", "#ffe680", "#c2371f"]],
   ["LG", "리퀴드 글래스", "iOS 26 느낌 · 맑은 유리·떠 있는 탭 바", ["#7cc4ff", "#ffffff", "#ff9ad5"]]];
-/* 위젯 색: 다크 테마(리니어·글래스 벤토)는 어둡게, A는 기기 다크 모드를 따르고, 나머지는 밝은 화면 */
-const DARK_THEMES = ["LN", "GB"];
+/* 위젯 색: 다크 테마(글래스 벤토)는 어둡게, A는 기기 다크 모드를 따르고, 나머지는 밝은 화면 */
+const DARK_THEMES = ["GB"];
 /* 메뉴에서 뺀 테마를 쓰던 브라우저는 기본 테마(뉴모피즘 레인보우)로 */
 if (!THEMES.some(t => t[0] === document.documentElement.dataset.theme)) document.documentElement.dataset.theme = "NR";
 const isDark = () => DARK_THEMES.includes(document.documentElement.dataset.theme) || (["A", "LG"].includes(document.documentElement.dataset.theme) && matchMedia("(prefers-color-scheme: dark)").matches);
