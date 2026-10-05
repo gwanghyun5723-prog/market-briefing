@@ -537,23 +537,6 @@ html[data-theme="WN"] .actplan{border-left:3px solid var(--accent)}
 html[data-theme="WN"] .rbtn{background:var(--accent);color:var(--accent-ink)}
 html[data-theme="WN"] header.top h1,html[data-theme="WN"] .tile-v{letter-spacing:-.035em}
 html[data-theme="WN"] header.top h1{font-family:"Nanum Myeongjo","Noto Serif KR",serif;font-weight:800}
-html[data-theme="MG"]{--bg:#ffffff;--card:rgba(255,255,255,.82);--ink:#0a2540;--sub:#4f5d75;--faint:#8792a6;--line:rgba(10,37,64,.07);--soft:rgba(246,248,252,.9);--up:#e5484d;--up-bg:#fdecec;--down:#3d63dd;--down-bg:#e9eefc;--flat:#4f5d75;--flat-bg:#f1f4f9;--accent:#635bff;--accent-ink:#fff;--accent-soft:#eeedff;--warn:#b45309;--warn-bg:#fff6e5;--p1:rgba(255,255,255,.82);--p2:rgba(255,255,255,.82);--p3:rgba(255,255,255,.82);--p4:rgba(255,255,255,.82);--p5:rgba(255,255,255,.82);--radius:16px;--shadow:0 8px 24px rgba(10,37,64,.07)}
-html[data-theme="MG"] body{background:radial-gradient(700px 360px at 0% 0%,rgba(255,122,182,.32),transparent 70%),radial-gradient(800px 380px at 55% -10%,rgba(99,91,255,.30),transparent 70%),radial-gradient(600px 360px at 100% 10%,rgba(255,184,77,.28),transparent 70%),#ffffff;font-feature-settings:'tnum'}
-html[data-theme="MG"] .side{background:rgba(255,255,255,.6);border-right:1px solid var(--line)}
-html[data-theme="MG"] nav.tabs button[aria-selected=true]{background:#635bff;color:#fff}
-html[data-theme="MG"] .brand .logo{background:var(--accent);color:var(--accent-ink)}
-html[data-theme="MG"] .card,html[data-theme="MG"] .tile,html[data-theme="MG"] .scard,html[data-theme="MG"] .tp,html[data-theme="MG"] .note,html[data-theme="MG"] .tnote,html[data-theme="MG"] .actplan,html[data-theme="MG"] .subtab,html[data-theme="MG"] .aisub,html[data-theme="MG"] .pill{border:1px solid var(--line)}
-html[data-theme="MG"] .tabsum,html[data-theme="MG"] .tp.accent{background:rgba(255,255,255,.78);color:#0a2540;border:1px solid var(--line)}
-html[data-theme="MG"] .tabsum-h,html[data-theme="MG"] .tp.accent .tph,html[data-theme="MG"] .tabsum li::marker,html[data-theme="MG"] .tp.accent .ttop li::marker{color:#635bff}
-html[data-theme="MG"] .tabsum b.hl,html[data-theme="MG"] .tp.accent b.hl{color:#635bff}
-html[data-theme="MG"] .tabsum b.up,html[data-theme="MG"] .tp.accent b.up{color:#e5484d}
-html[data-theme="MG"] .tabsum b.down,html[data-theme="MG"] .tp.accent b.down{color:#3d63dd}
-html[data-theme="MG"] .tabsum .k,html[data-theme="MG"] .tp.accent .tsub,html[data-theme="MG"] .tp.accent .tsrc{color:inherit;opacity:.85}
-html[data-theme="MG"] .actplan{border-left:3px solid var(--accent)}
-html[data-theme="MG"] .rbtn{background:var(--accent);color:var(--accent-ink)}
-html[data-theme="MG"] header.top h1,html[data-theme="MG"] .tile-v{letter-spacing:-.035em}
-html[data-theme="MG"] body{background-attachment:fixed}
-html[data-theme="MG"] .side,html[data-theme="MG"] .card,html[data-theme="MG"] .tile,html[data-theme="MG"] .tabsum{backdrop-filter:blur(16px)}
 .themepop{max-height:calc(100vh - 90px);overflow:auto}
 /* ── 2026 트렌드 테마 6종: 글래스 벤토·클레이 3D·도파민 팝·리퀴드 메탈·아날로그 노트·리소 프린트 ── */
 html[data-theme="GB"]{--bg:#1b1340;--card:rgba(255,255,255,.10);--ink:#ffffff;--sub:rgba(255,255,255,.74);--faint:rgba(255,255,255,.55);--line:rgba(255,255,255,.2);--soft:rgba(255,255,255,.08);--up:#ffb3c4;--up-bg:rgba(255,90,130,.2);--down:#a9d0ff;--down-bg:rgba(90,150,255,.2);--flat:rgba(255,255,255,.7);--flat-bg:rgba(255,255,255,.1);--accent:#ffd36e;--accent-ink:#1b1340;--accent-soft:rgba(255,211,110,.16);--warn:#ffd36e;--warn-bg:rgba(255,211,110,.14);--p1:rgba(255,255,255,.1);--p2:rgba(255,255,255,.1);--p3:rgba(255,255,255,.1);--p4:rgba(255,255,255,.1);--p5:rgba(255,255,255,.1);--radius:20px;--shadow:0 10px 30px rgba(10,0,40,.25);color-scheme:dark}
@@ -1027,7 +1010,6 @@ const THEMES = [["MT", "뉴모피즘 민트 글로우", "기본 · 페일 블루
   ["E", "오로라 글래스", "그라데이션·반투명 카드", ["#7c3aed", "#2563eb", "#ffe3f1"]],
   ["FC", "핀테크 클린", "큰 숫자·넉넉한 여백·파란 포인트", ["#ffffff", "#3182f6", "#f2f4f6"]],
   ["WN", "웜 뉴트럴", "미색 바탕·테라코타 포인트", ["#f4f1ea", "#c96442", "#1f1e1d"]],
-  ["MG", "메시 그라데이션", "흰 바탕 위 색 번짐·부드러운 그림자", ["#ff7ab6", "#635bff", "#ffb84d"]],
   ["GB", "글래스 벤토", "오로라 위 반투명 유리 타일", ["#ff5fa2", "#4f46e5", "#ff9f43"]],
   ["CL", "클레이 3D", "말랑한 점토 입체감·파스텔", ["#e9e5ff", "#7c5cf0", "#ffb3c6"]],
   ["AN", "아날로그 노트", "종이 질감·손글씨·형광펜", ["#f6f1e4", "#ffe680", "#c2371f"]],
